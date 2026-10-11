@@ -1,0 +1,6 @@
+# Local full-quality master; the portable web encode is committed in assets/films/.
+/videos/AI PRODUCTION/The Ai Koreichi.mp4
+# Generated local QA captures and Python caches are not website dependencies.
+/output/qa/
+__pycache__/
+*.pyc
