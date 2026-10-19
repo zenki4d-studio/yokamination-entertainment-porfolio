@@ -13,7 +13,7 @@ ul{list-style:none}
 .bar>*{pointer-events:auto}
 .logo svg{height:30px;width:auto;display:block;filter:drop-shadow(0 1px 8px rgba(0,0,0,.5))}
 .nav-col{position:relative}
-.nav-col>a{display:inline-block;padding:6px 12px;transition:background .2s,color .2s}
+.nav-col>a{display:inline-block;padding:6px 12px;text-transform:uppercase;letter-spacing:.03em;transition:background .2s,color .2s}
 .nav-col>a:hover,.nav-col>a.on{background:var(--fg);color:#000;text-shadow:none}
 .plus{display:inline-block;transition:transform .3s}
 body[data-view=about] .plus{transform:rotate(45deg)}

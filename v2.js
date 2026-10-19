@@ -229,7 +229,7 @@
       out.push(block('Production house | Yokamination Entertainment', story.credits.map(([r, n]) => [r, teamName(n)])));
       out.push(block('Original music', [['Music Producer', 'Viet Nguyen']]));
       out.push(block('Made with', story.tools.split('·').map(t => t.trim()).map((t, i) => [i ? '' : 'Tools', t])));
-    } else out.push(block('Production house | Yokamination Entertainment', [['Director', 'Viet Nguyen'], ['Category', nice(f.group)]]));
+    } else out.push(block('Production house | Yokamination Entertainment', [['Director', 'Viet Nguyen'], ['Production', 'Yokamination Entertainment']]));
     return out.join('');
   };
 
