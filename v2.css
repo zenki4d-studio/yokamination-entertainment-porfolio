@@ -8,17 +8,18 @@ ul{list-style:none}
 
 /* Header: logo + 4 links spread across the width */
 /* Five items, equal gaps: logo and Contact pinned to the edges, links evenly spaced between */
-.bar{position:fixed;inset:0 0 auto;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:14px var(--pad);pointer-events:none;mix-blend-mode:difference}
+/* Readable on any film: soft top shade + shadowed white text instead of a blend mode */
+.bar{position:fixed;inset:0 0 auto;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:12px var(--pad) 40px;pointer-events:none;font-size:19px;background:linear-gradient(rgba(0,0,0,.5),transparent);text-shadow:0 1px 10px rgba(0,0,0,.5)}
 .bar>*{pointer-events:auto}
-.logo svg{height:20px;width:auto;display:block}
+.logo svg{height:30px;width:auto;display:block;filter:drop-shadow(0 1px 8px rgba(0,0,0,.5))}
 .nav-col{position:relative}
-.nav-col>a{padding:0 2px;transition:background .2s,color .2s}
-.nav-col>a:hover,.nav-col>a.on{background:var(--fg);color:#000}
+.nav-col>a{display:inline-block;padding:6px 12px;transition:background .2s,color .2s}
+.nav-col>a:hover,.nav-col>a.on{background:var(--fg);color:#000;text-shadow:none}
 .plus{display:inline-block;transition:transform .3s}
 body[data-view=about] .plus{transform:rotate(45deg)}
-.filters{position:absolute;top:26px;left:0;white-space:nowrap;display:none;font-size:14px;line-height:1.85}
+.filters{position:absolute;top:44px;left:12px;white-space:nowrap;display:none;font-size:17px;line-height:2}
 body[data-view=work] .filters{display:block}
-.filters button{color:var(--dim);text-align:left}
+.filters button{color:rgba(255,255,255,.65);text-align:left}
 .filters button.on,.filters button:hover{color:var(--fg)}
 .filters sup{font-size:9px;margin-left:2px}
 
@@ -143,7 +144,9 @@ dialog video{width:100%;height:100%;object-fit:contain}
 
 @media (max-width:760px){
   .bar{font-size:13px}
-  .logo svg{height:16px}
+  .logo svg{height:20px}
+  .bar{font-size:15px;padding-bottom:28px}
+  .nav-col>a{padding:5px 8px}
   .grid{grid-template-columns:1fr}
   .team-names,.team-roles{width:auto;left:auto;right:auto}
   .team-names{top:auto;bottom:22%;left:50%;transform:translateX(-50%);text-align:center}
