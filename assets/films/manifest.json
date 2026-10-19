@@ -1,0 +1,262 @@
+{
+  "videos/AI 3D PRODUCT/260520 Upwork - 1 Curtain Rod no Drilling Video Ad Conzept.mp4": {
+    "sourceSha256": "efd1f2aa634f4cce9b43296ee2cb95d8e38958770546a1d5520a1935b3fdcd32",
+    "sourceBytes": 166334562,
+    "sourceMetadata": {
+      "durationSeconds": 29.75,
+      "width": 1920,
+      "height": 1080,
+      "fps": 24.0,
+      "codec": "h264",
+      "hasAudio": true,
+      "audioCodec": "aac"
+    },
+    "web": "assets/films/a395c9ee7902.mp4",
+    "webBytes": 10667355,
+    "webMetadata": {
+      "durationSeconds": 29.76,
+      "width": 1920,
+      "height": 1080,
+      "fps": 24.0,
+      "codec": "h264",
+      "hasAudio": true,
+      "audioCodec": "aac"
+    },
+    "profile": "h264-crf22-fast-1080p-sourcefps-aac160-faststart-v1",
+    "posterSeconds": 3.0
+  },
+  "videos/AI 3D PRODUCT/260629_Toillet Brush Ad 24fps.mov": {
+    "sourceSha256": "f0150db856a19ce3df9e90a4d2937ebd3dba80465c1f6a7fbd34cd4c43e86ca9",
+    "sourceBytes": 50863336,
+    "sourceMetadata": {
+      "durationSeconds": 28.18,
+      "width": 1920,
+      "height": 1080,
+      "fps": 24.0,
+      "codec": "h264",
+      "hasAudio": true,
+      "audioCodec": "aac"
+    },
+    "web": "assets/films/b0783e76129f.mp4",
+    "webBytes": 13179608,
+    "webMetadata": {
+      "durationSeconds": 28.18,
+      "width": 1920,
+      "height": 1080,
+      "fps": 24.0,
+      "codec": "h264",
+      "hasAudio": true,
+      "audioCodec": "aac"
+    },
+    "profile": "h264-crf22-fast-1080p-sourcefps-aac160-faststart-v1",
+    "posterSeconds": 3.0
+  },
+  "videos/AI 3D PRODUCT/260827 -  Angle valve Ad.mov": {
+    "sourceSha256": "600702901d76d06fc86040e44a351a7972d1c27d2f87fd751a649de2c6960977",
+    "sourceBytes": 49646316,
+    "sourceMetadata": {
+      "durationSeconds": 25.0,
+      "width": 1920,
+      "height": 1080,
+      "fps": 24.0,
+      "codec": "h264",
+      "hasAudio": true,
+      "audioCodec": "aac"
+    },
+    "web": "assets/films/f17dc282b414.mp4",
+    "webBytes": 18163978,
+    "webMetadata": {
+      "durationSeconds": 25.0,
+      "width": 1920,
+      "height": 1080,
+      "fps": 24.0,
+      "codec": "h264",
+      "hasAudio": true,
+      "audioCodec": "aac"
+    },
+    "profile": "h264-crf22-fast-1080p-sourcefps-aac160-faststart-v1",
+    "posterSeconds": 4.0
+  },
+  "videos/AI 3D PRODUCT/261001 - Design P-Trap Ad.mp4": {
+    "sourceSha256": "07b719301c09a477c153d6cfdaa425e9c284e5d2f6d05172e1d0bb816cb97bf6",
+    "sourceBytes": 57425121,
+    "sourceMetadata": {
+      "durationSeconds": 29.8,
+      "width": 1920,
+      "height": 1080,
+      "fps": 24.0,
+      "codec": "h264",
+      "hasAudio": true,
+      "audioCodec": "aac"
+    },
+    "web": "assets/films/01198a2c3912.mp4",
+    "webBytes": 16404515,
+    "webMetadata": {
+      "durationSeconds": 29.8,
+      "width": 1920,
+      "height": 1080,
+      "fps": 24.0,
+      "codec": "h264",
+      "hasAudio": true,
+      "audioCodec": "aac"
+    },
+    "profile": "h264-crf22-fast-1080p-sourcefps-aac160-faststart-v1",
+    "posterSeconds": 3.0
+  },
+  "videos/AI CARTOON/261014 - Troi Mua Cho Moi Bat Ga.mp4": {
+    "sourceSha256": "490b682f2babeec0cfcf232118fda135184037456dd915a024b40cf121a295ed",
+    "sourceBytes": 101546432,
+    "sourceMetadata": {
+      "durationSeconds": 66.57,
+      "width": 1920,
+      "height": 1080,
+      "fps": 30.0,
+      "codec": "h264",
+      "hasAudio": true,
+      "audioCodec": "aac"
+    },
+    "web": "assets/films/f5aa30040bec.mp4",
+    "webBytes": 45353217,
+    "webMetadata": {
+      "durationSeconds": 66.57,
+      "width": 1920,
+      "height": 1080,
+      "fps": 30.0,
+      "codec": "h264",
+      "hasAudio": true,
+      "audioCodec": "aac"
+    },
+    "profile": "h264-crf22-fast-1080p-sourcefps-aac160-faststart-v1",
+    "posterSeconds": 3.0
+  },
+  "videos/AI CARTOON/261015_Trailer_Cánh chim Lạc Hồng_4K 16_9.mp4": {
+    "sourceSha256": "b381dc4701d49f07fe9dc7f60aa2a59591cb912738563ee645561b755dacf8c2",
+    "sourceBytes": 538287583,
+    "sourceMetadata": {
+      "durationSeconds": 62.21,
+      "width": 3840,
+      "height": 2160,
+      "fps": 24.0,
+      "codec": "h264",
+      "hasAudio": true,
+      "audioCodec": "aac"
+    },
+    "web": "assets/films/8cf0fc7e40ce.mp4",
+    "webBytes": 33140410,
+    "webMetadata": {
+      "durationSeconds": 62.18,
+      "width": 1920,
+      "height": 1080,
+      "fps": 24.0,
+      "codec": "h264",
+      "hasAudio": true,
+      "audioCodec": "aac"
+    },
+    "profile": "h264-crf22-fast-1080p-sourcefps-aac160-faststart-v1",
+    "posterSeconds": 3.0
+  },
+  "videos/AI GAME CINEMATIC/The Ai Kuroichi.mp4": {
+    "sourceSha256": "362be655a8ed3aafb3c64417c648211f8ced49ff5a1cd315e4f6e2f1279c467a",
+    "sourceBytes": 99009480,
+    "sourceMetadata": {
+      "durationSeconds": 93.05,
+      "width": 1920,
+      "height": 1080,
+      "fps": 60.0,
+      "codec": "h264",
+      "hasAudio": true,
+      "audioCodec": "aac"
+    },
+    "web": "assets/films/86f05f7694b5.mp4",
+    "webBytes": 51740112,
+    "webMetadata": {
+      "durationSeconds": 93.06,
+      "width": 1920,
+      "height": 1080,
+      "fps": 60.0,
+      "codec": "h264",
+      "hasAudio": true,
+      "audioCodec": "aac"
+    },
+    "profile": "h264-crf22-fast-1080p-sourcefps-aac160-faststart-v1",
+    "posterSeconds": 3.0
+  },
+  "videos/AI SOCIAL/7. GrowPlus+ Váng Sữa_1.mp4": {
+    "sourceSha256": "6c40da533b6b393f7f364ef9a7858aa9c41f51933f3075509728cf36bcb87896",
+    "sourceBytes": 52389102,
+    "sourceMetadata": {
+      "durationSeconds": 31.9,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30.0,
+      "codec": "h264",
+      "hasAudio": true,
+      "audioCodec": "aac"
+    },
+    "web": "assets/films/4e9ce6c79332.mp4",
+    "webBytes": 15524493,
+    "webMetadata": {
+      "durationSeconds": 31.91,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30.0,
+      "codec": "h264",
+      "hasAudio": true,
+      "audioCodec": "aac"
+    },
+    "profile": "h264-crf22-fast-1080p-sourcefps-aac160-faststart-v1",
+    "posterSeconds": 3.0
+  },
+  "videos/AI SOCIAL/TIKTOPSHOP AI.mp4": {
+    "sourceSha256": "687b2f8512e306cb22ac9d3b56f50a0781391438d0b06fc56e7563ddf22c8119",
+    "sourceBytes": 49337222,
+    "sourceMetadata": {
+      "durationSeconds": 31.65,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30.0,
+      "codec": "h264",
+      "hasAudio": true,
+      "audioCodec": "aac"
+    },
+    "web": "assets/films/50a03b444594.mp4",
+    "webBytes": 24412471,
+    "webMetadata": {
+      "durationSeconds": 31.65,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30.0,
+      "codec": "h264",
+      "hasAudio": true,
+      "audioCodec": "aac"
+    },
+    "profile": "h264-crf22-fast-1080p-sourcefps-aac160-faststart-v1",
+    "posterSeconds": 3.0
+  },
+  "videos/MONTAGE AI CATALOG/Montage AI Flow.mp4": {
+    "sourceSha256": "f0a1ef0f8068d88d69dee6d1373d35d4d9b5428fef19da24201b1f2cad9240d8",
+    "sourceBytes": 86347459,
+    "sourceMetadata": {
+      "durationSeconds": 64.51,
+      "width": 1920,
+      "height": 1080,
+      "fps": 24.0,
+      "codec": "h264",
+      "hasAudio": true,
+      "audioCodec": "aac"
+    },
+    "web": "assets/films/672d7733e84d.mp4",
+    "webBytes": 37837072,
+    "webMetadata": {
+      "durationSeconds": 64.51,
+      "width": 1920,
+      "height": 1080,
+      "fps": 24.0,
+      "codec": "h264",
+      "hasAudio": true,
+      "audioCodec": "aac"
+    },
+    "profile": "h264-crf22-fast-1080p-sourcefps-aac160-faststart-v1",
+    "posterSeconds": 3.0
+  }
+}

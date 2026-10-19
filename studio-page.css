@@ -1,0 +1,61 @@
+.studio-page{background:var(--paper);color:var(--ink)}
+.studio-page .site-header{background:var(--ink);color:var(--paper)}
+.studio-page .site-header [aria-current=page]{color:var(--accent)}
+.studio-page .skip:focus{z-index:20}
+.studio-page a:focus-visible,.studio-page button:focus-visible,.people-carousel:focus-visible{outline:2px solid #586434;outline-offset:5px}
+.studio-intro{padding:125px var(--gutter) 46px}
+.studio-kicker{display:flex;justify-content:space-between;gap:20px;padding-bottom:24px;border-bottom:1px solid #bdc1b6;color:#596050}
+.studio-intro-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:8%;align-items:end;margin-top:32px}
+.studio-intro h1{font-size:clamp(42px,5.5vw,86px);font-weight:500;line-height:1.06;letter-spacing:-.055em}
+.studio-intro h1 span{color:#737b6c}
+.studio-intro-grid>div{max-width:480px}
+.studio-intro .studio-lead{font-size:clamp(17px,1.5vw,23px);line-height:1.5;margin-bottom:15px}
+.studio-intro-grid>div>p:last-child{font-size:13px;line-height:1.8;color:#596050}
+.people-carousel{margin:0 var(--gutter);padding:0 0 55px;scroll-margin-top:95px}
+.people-heading{position:sticky;top:76px;z-index:2;background:var(--paper);display:flex;justify-content:space-between;align-items:center;gap:16px;border-top:1px solid #bdc1b6;padding:16px 0;color:#596050}
+.people-controls{display:flex;align-items:center;gap:25px;flex-shrink:0}
+.people-heading h2{font-weight:600;letter-spacing:.09em}
+.person-slide{display:grid;grid-template-columns:minmax(250px,.85fr) 1.3fr;gap:9%;align-items:center}
+.person-portrait{width:100%;max-width:420px;justify-self:center;aspect-ratio:4/5;background:#d4d7cf}
+.person-portrait>img{width:100%;height:100%;aspect-ratio:auto;object-fit:cover;object-position:center 30%;filter:grayscale(1)}
+.person-portrait .portrait-mark{width:clamp(60px,7vw,100px)}
+.person-profile{padding:22px 0;max-width:620px}
+.person-kicker{color:#68705e}
+.person-profile h2{font-size:clamp(42px,5.1vw,78px);margin:20px 0 23px;font-weight:500;line-height:1.08}
+.person-profile h2>span{color:#7f896f}
+.person-role{font-size:clamp(18px,1.65vw,26px);line-height:1.55;letter-spacing:-.025em}
+.person-discipline{color:#596050;font-size:12px;line-height:1.6;margin-top:13px}
+.person-bio{font-size:14px;line-height:1.9;color:#596050;margin-top:29px;max-width:480px}
+.person-profile .text-link{display:inline-block;margin-top:31px}
+.people-arrows{display:flex;gap:12px}
+.people-arrows button{display:grid;place-items:center;width:48px;height:48px;border:1px solid #8d9583;border-radius:50%;background:transparent;color:var(--ink);font-size:24px;transition:background .2s,border-color .2s}
+.people-arrows button:hover{background:var(--accent);border-color:#7a8950}
+.studio-invitation{padding:16px var(--gutter) 75px;display:flex;justify-content:space-between;gap:30px;align-items:center}
+.studio-invitation>.eyebrow{color:#596050}
+.studio-invitation>a{font-size:clamp(24px,3vw,44px);letter-spacing:-.045em;border-bottom:1px solid #8d9583;padding-bottom:8px}
+.studio-invitation>a>span{margin-left:20px}
+.studio-page .site-footer{border-color:#bdc1b6;background:var(--ink);color:var(--paper);margin:0;padding:28px var(--gutter)}
+.studio-page .site-footer>a:last-child{color:var(--paper)}
+@media(min-width:1700px){.studio-page main{max-width:1800px;margin-inline:auto}}
+@media(max-width:800px){.studio-intro-grid{grid-template-columns:1fr;gap:28px}.studio-intro-grid>div{max-width:620px}.studio-intro{padding-top:110px}.person-slide{grid-template-columns:1fr 1.15fr;gap:6%}.person-profile h2{font-size:42px}.person-role{font-size:18px}.person-bio{font-size:13px;margin-top:20px}}
+@media(max-width:600px){
+  .studio-intro{padding:96px var(--gutter) 34px}
+  .studio-kicker{padding-bottom:19px}.studio-kicker>span:last-child{display:none}
+  .studio-intro-grid{margin-top:26px;gap:24px}
+  .studio-intro h1{font-size:clamp(38px,9.7vw,58px)}
+  .studio-intro .studio-lead{font-size:17px;margin-bottom:10px}
+  .studio-intro-grid>div>p:last-child{font-size:12px}
+  .people-heading{top:64px;padding:12px 0}.people-heading .eyebrow{font-size:9px}
+  .people-heading h2{max-width:130px;line-height:1.7}
+  .people-controls{gap:13px}.people-arrows{gap:8px}
+  .people-arrows button{width:44px;height:44px;font-size:23px}
+  .person-slide{grid-template-columns:1fr;gap:23px}
+  .person-portrait{max-width:400px;aspect-ratio:4/4.3}
+  .person-profile{padding:0}.person-profile h2{font-size:43px;margin:13px 0 17px}
+  .person-role{font-size:20px}.person-discipline{font-size:11px}
+  .person-bio{margin-top:21px;font-size:13px}.person-profile .text-link{margin-top:23px}
+  .people-carousel{padding-bottom:35px}
+  .studio-invitation{padding-bottom:50px;align-items:flex-start;flex-direction:column;gap:18px}
+  .studio-invitation>a{font-size:29px}.studio-page .site-footer{grid-template-columns:1fr auto}
+  .studio-page .site-footer>.text-link{grid-row:2;grid-column:1/-1;font-size:9px;justify-self:start}
+}

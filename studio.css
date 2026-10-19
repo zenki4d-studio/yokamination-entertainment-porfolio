@@ -16,10 +16,19 @@ dialog{padding:0;border:1px solid var(--line);width:min(1300px,96vw);max-height:
 
 /* Featured films stay independent of the paginated work collection. */
 #hero-selector{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px;flex:1;min-width:0}
-#hero-selector button{min-width:0;line-height:1.5;min-height:65px;align-self:stretch}
-.hero-bottom>.scroll-link{flex-shrink:0}
-@media(max-width:1100px){.hero-bottom{flex-direction:column;align-items:stretch;gap:12px}.hero-bottom>.scroll-link{align-self:flex-end}.hero-brand{bottom:175px}}
-@media(max-width:600px){#hero-selector{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 16px}#hero-selector button{min-height:52px;padding-top:9px;font-size:10px}#hero-selector button small{font-size:7px}.hero-brand{bottom:235px}.hero-bottom>.scroll-link{align-self:flex-start}}
+#hero-selector button{position:relative;min-width:0;line-height:1.5;min-height:65px;align-self:stretch}
+#hero-selector button:before{content:"";position:absolute;top:-1px;left:0;width:var(--preview-progress,0%);height:2px;background:var(--accent)}
+#hero-selector button[aria-pressed=true]{border-top-color:#ffffff50}
+.hero-actions{display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex-shrink:0}
+#hero-toggle{background:#1118;border:1px solid #ffffff45;color:#fff;font-size:9px;letter-spacing:.04em;padding:9px 12px;min-height:38px}
+#hero-toggle:hover{background:var(--accent);border-color:var(--accent);color:var(--ink)}
+.reel-label b{background:var(--accent);border-color:var(--accent);color:var(--ink)}
+.project--portrait .project-media{background:#090a09}
+.more-grid .project--portrait .project-media{aspect-ratio:9/16;width:min(100%,360px);margin-inline:auto}
+.project--portrait .project-media img,.project--portrait .project-media video{object-fit:contain}
+.project--portrait:hover img{transform:none}
+@media(max-width:1100px){.hero-bottom{flex-direction:column;align-items:stretch;gap:12px}.hero-actions{flex-direction:row;align-items:center;justify-content:space-between}.hero-brand{bottom:175px}}
+@media(max-width:600px){#hero-selector{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 16px}#hero-selector button{min-height:54px;padding-top:9px;font-size:10px}#hero-selector button small{font-size:7px}.hero-brand{bottom:235px}.hero-actions{width:100%}#hero-toggle{font-size:8px;padding:8px 10px}}
 /* Quiet branding and a centered, single-action contact composition. */
 .sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important}
 .brand-lockup{display:block;width:245px;flex-shrink:0;line-height:0;background:none}

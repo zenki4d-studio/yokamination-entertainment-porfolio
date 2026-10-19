@@ -1,6 +1,14 @@
 # Local full-quality master; the portable web encode is committed in assets/films/.
 /videos/AI PRODUCTION/The Ai Koreichi.mp4
+# New source masters stay local; browser-ready copies are published from assets/films/.
+/videos/AI 3D PRODUCT/
+/videos/AI CARTOON/
+/videos/AI GAME CINEMATIC/
+/videos/AI SOCIAL/
+/videos/MONTAGE AI CATALOG/
 # Generated local QA captures and Python caches are not website dependencies.
 /output/qa/
+/output/playwright/
+/.playwright-cli/
 __pycache__/
 *.pyc
