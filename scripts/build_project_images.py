@@ -25,6 +25,19 @@ SOURCES = {
     'faces': 'hf_20261012_032233_58838b00-af62-44be-816f-a334e65f8cd1_min (1).png',
     'crystal': 'hf_20261012_034305_6bad57a5-5064-4793-92c1-f714555f2a4b_min.png',
     'fishing-rod': 'Prop_design_sheet_painted...nds_no_background_scenery.png',
+    'location-rooftop': 'Painted_in_the_exact_art_...lines_no_modern_buildings.png',
+    'location-valley': 'Painted_in_the_exact_art_...lines_no_modern_buildings3.png',
+    'rooster-faces': 'hf_20261012_040434_f72b101f-d0a0-45ca-b995-325d2e9f65d4_min.png',
+    'frame-aerial': '7cffba3c-06bc-4980-83e6-3e72955a4a02.png',
+    'frame-flight': 'hf_20261012_040927_2d2ac188-d5ae-4c71-b690-6589d7ea2b85_min.png',
+    'frame-terraces': 'hf_20261012_061510_1ff3d81b-d170-4899-97da-c28d56e5b356_min.png',
+    'frame-dive': 'hf_20261012_081115_0c9ee7d1-cb29-4644-ba8d-716b7031440f_min.png',
+    'frame-koi': 'hf_20261012_084810_26af6908-a2ed-49e3-b0e7-221414ccc828_min.png',
+    'frame-crystal': 'hf_20261012_085132_ce5d882e-7f59-4b6c-b352-fbe8b1ebbc6f_min.png',
+    'frame-hilltop': 'hf_20261012_155053_3f11c43d-9365-4034-85d9-d59fd3a05a6a_min.png',
+    'frame-landing': 'hf_20261012_172441_28d2dd5f-189a-4cef-835c-73621b8b7aa6_min.png',
+    'frame-buffalo': 'hf_20261014_051754_49c7e1c3-64c3-46b6-ae51-e35f01dd09c7_min.png',
+    'frame-ducks': 'hf_20261014_074649_3b21bddb-c6dc-4f42-8f53-1a12d1a52d84_min.png',
 }
 DECK_IMAGES = {'sketch': 'ppt/media/image39.png', 'keyframe': 'ppt/media/image40.png'}
 

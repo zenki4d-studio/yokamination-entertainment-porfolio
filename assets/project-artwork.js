@@ -372,5 +372,291 @@ window.PROJECT_ARTWORK = {
         "bytes": 288456
       }
     ]
+  },
+  "location-rooftop": {
+    "variants": [
+      {
+        "src": "assets/projects/troi-mua/location-rooftop-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 74390
+      },
+      {
+        "src": "assets/projects/troi-mua/location-rooftop-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 266036
+      },
+      {
+        "src": "assets/projects/troi-mua/location-rooftop-2048.webp",
+        "width": 2048,
+        "height": 1152,
+        "bytes": 604108
+      }
+    ]
+  },
+  "location-valley": {
+    "variants": [
+      {
+        "src": "assets/projects/troi-mua/location-valley-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 74268
+      },
+      {
+        "src": "assets/projects/troi-mua/location-valley-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 237792
+      },
+      {
+        "src": "assets/projects/troi-mua/location-valley-2048.webp",
+        "width": 2048,
+        "height": 1152,
+        "bytes": 501736
+      }
+    ]
+  },
+  "rooster-faces": {
+    "variants": [
+      {
+        "src": "assets/projects/troi-mua/rooster-faces-640.webp",
+        "width": 640,
+        "height": 361,
+        "bytes": 37870
+      },
+      {
+        "src": "assets/projects/troi-mua/rooster-faces-1280.webp",
+        "width": 1280,
+        "height": 723,
+        "bytes": 128588
+      },
+      {
+        "src": "assets/projects/troi-mua/rooster-faces-2048.webp",
+        "width": 2048,
+        "height": 1157,
+        "bytes": 298066
+      }
+    ]
+  },
+  "frame-aerial": {
+    "variants": [
+      {
+        "src": "assets/projects/troi-mua/frame-aerial-640.webp",
+        "width": 640,
+        "height": 361,
+        "bytes": 89386
+      },
+      {
+        "src": "assets/projects/troi-mua/frame-aerial-1280.webp",
+        "width": 1280,
+        "height": 723,
+        "bytes": 347136
+      },
+      {
+        "src": "assets/projects/troi-mua/frame-aerial-2048.webp",
+        "width": 2048,
+        "height": 1157,
+        "bytes": 854432
+      }
+    ]
+  },
+  "frame-flight": {
+    "variants": [
+      {
+        "src": "assets/projects/troi-mua/frame-flight-640.webp",
+        "width": 640,
+        "height": 361,
+        "bytes": 56344
+      },
+      {
+        "src": "assets/projects/troi-mua/frame-flight-1280.webp",
+        "width": 1280,
+        "height": 723,
+        "bytes": 153864
+      },
+      {
+        "src": "assets/projects/troi-mua/frame-flight-2048.webp",
+        "width": 2048,
+        "height": 1157,
+        "bytes": 314888
+      }
+    ]
+  },
+  "frame-terraces": {
+    "variants": [
+      {
+        "src": "assets/projects/troi-mua/frame-terraces-640.webp",
+        "width": 640,
+        "height": 361,
+        "bytes": 64148
+      },
+      {
+        "src": "assets/projects/troi-mua/frame-terraces-1280.webp",
+        "width": 1280,
+        "height": 723,
+        "bytes": 237280
+      },
+      {
+        "src": "assets/projects/troi-mua/frame-terraces-2048.webp",
+        "width": 2048,
+        "height": 1157,
+        "bytes": 617026
+      }
+    ]
+  },
+  "frame-dive": {
+    "variants": [
+      {
+        "src": "assets/projects/troi-mua/frame-dive-640.webp",
+        "width": 640,
+        "height": 361,
+        "bytes": 60638
+      },
+      {
+        "src": "assets/projects/troi-mua/frame-dive-1280.webp",
+        "width": 1280,
+        "height": 723,
+        "bytes": 204932
+      },
+      {
+        "src": "assets/projects/troi-mua/frame-dive-2048.webp",
+        "width": 2048,
+        "height": 1157,
+        "bytes": 490566
+      }
+    ]
+  },
+  "frame-koi": {
+    "variants": [
+      {
+        "src": "assets/projects/troi-mua/frame-koi-640.webp",
+        "width": 640,
+        "height": 361,
+        "bytes": 53194
+      },
+      {
+        "src": "assets/projects/troi-mua/frame-koi-1280.webp",
+        "width": 1280,
+        "height": 723,
+        "bytes": 170698
+      },
+      {
+        "src": "assets/projects/troi-mua/frame-koi-2048.webp",
+        "width": 2048,
+        "height": 1157,
+        "bytes": 405142
+      }
+    ]
+  },
+  "frame-crystal": {
+    "variants": [
+      {
+        "src": "assets/projects/troi-mua/frame-crystal-640.webp",
+        "width": 640,
+        "height": 361,
+        "bytes": 50470
+      },
+      {
+        "src": "assets/projects/troi-mua/frame-crystal-1280.webp",
+        "width": 1280,
+        "height": 723,
+        "bytes": 146926
+      },
+      {
+        "src": "assets/projects/troi-mua/frame-crystal-2048.webp",
+        "width": 2048,
+        "height": 1157,
+        "bytes": 314034
+      }
+    ]
+  },
+  "frame-hilltop": {
+    "variants": [
+      {
+        "src": "assets/projects/troi-mua/frame-hilltop-640.webp",
+        "width": 640,
+        "height": 361,
+        "bytes": 64356
+      },
+      {
+        "src": "assets/projects/troi-mua/frame-hilltop-1280.webp",
+        "width": 1280,
+        "height": 723,
+        "bytes": 233230
+      },
+      {
+        "src": "assets/projects/troi-mua/frame-hilltop-2048.webp",
+        "width": 2048,
+        "height": 1157,
+        "bytes": 579152
+      }
+    ]
+  },
+  "frame-landing": {
+    "variants": [
+      {
+        "src": "assets/projects/troi-mua/frame-landing-640.webp",
+        "width": 640,
+        "height": 361,
+        "bytes": 40520
+      },
+      {
+        "src": "assets/projects/troi-mua/frame-landing-1280.webp",
+        "width": 1280,
+        "height": 723,
+        "bytes": 127488
+      },
+      {
+        "src": "assets/projects/troi-mua/frame-landing-2048.webp",
+        "width": 2048,
+        "height": 1157,
+        "bytes": 255086
+      }
+    ]
+  },
+  "frame-buffalo": {
+    "variants": [
+      {
+        "src": "assets/projects/troi-mua/frame-buffalo-640.webp",
+        "width": 640,
+        "height": 361,
+        "bytes": 67278
+      },
+      {
+        "src": "assets/projects/troi-mua/frame-buffalo-1280.webp",
+        "width": 1280,
+        "height": 723,
+        "bytes": 254118
+      },
+      {
+        "src": "assets/projects/troi-mua/frame-buffalo-2048.webp",
+        "width": 2048,
+        "height": 1157,
+        "bytes": 636692
+      }
+    ]
+  },
+  "frame-ducks": {
+    "variants": [
+      {
+        "src": "assets/projects/troi-mua/frame-ducks-640.webp",
+        "width": 640,
+        "height": 361,
+        "bytes": 66366
+      },
+      {
+        "src": "assets/projects/troi-mua/frame-ducks-1280.webp",
+        "width": 1280,
+        "height": 723,
+        "bytes": 277822
+      },
+      {
+        "src": "assets/projects/troi-mua/frame-ducks-2048.webp",
+        "width": 2048,
+        "height": 1157,
+        "bytes": 597342
+      }
+    ]
   }
 };

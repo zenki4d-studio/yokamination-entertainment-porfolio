@@ -457,5 +457,356 @@
         "bytes": 288456
       }
     ]
+  },
+  "location-rooftop": {
+    "source": "pictures/Project Troi Mua Cho Moi Bat Ga/Painted_in_the_exact_art_...lines_no_modern_buildings.png",
+    "sourceBytes": 6957080,
+    "sourceSha256": "730127a337945c9aed1250b9f2ec5ccbd49ed95597108fbf73c97835a03be9e7",
+    "sourceWidth": 2560,
+    "sourceHeight": 1440,
+    "variants": [
+      {
+        "src": "assets/projects/troi-mua/location-rooftop-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 74390
+      },
+      {
+        "src": "assets/projects/troi-mua/location-rooftop-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 266036
+      },
+      {
+        "src": "assets/projects/troi-mua/location-rooftop-2048.webp",
+        "width": 2048,
+        "height": 1152,
+        "bytes": 604108
+      }
+    ]
+  },
+  "location-valley": {
+    "source": "pictures/Project Troi Mua Cho Moi Bat Ga/Painted_in_the_exact_art_...lines_no_modern_buildings3.png",
+    "sourceBytes": 6275590,
+    "sourceSha256": "a725bee7118db188d35a62497e3fe1abc46160c558c7002ff5ab99b7762de4c5",
+    "sourceWidth": 2560,
+    "sourceHeight": 1440,
+    "variants": [
+      {
+        "src": "assets/projects/troi-mua/location-valley-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 74268
+      },
+      {
+        "src": "assets/projects/troi-mua/location-valley-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 237792
+      },
+      {
+        "src": "assets/projects/troi-mua/location-valley-2048.webp",
+        "width": 2048,
+        "height": 1152,
+        "bytes": 501736
+      }
+    ]
+  },
+  "rooster-faces": {
+    "source": "pictures/Project Troi Mua Cho Moi Bat Ga/hf_20261012_040434_f72b101f-d0a0-45ca-b995-325d2e9f65d4_min.png",
+    "sourceBytes": 6989837,
+    "sourceSha256": "b82a9c71bbcb9bdff6495f2e27009b6ac34573e4074b82b8ed4b1c32e56bd2a5",
+    "sourceWidth": 2720,
+    "sourceHeight": 1536,
+    "variants": [
+      {
+        "src": "assets/projects/troi-mua/rooster-faces-640.webp",
+        "width": 640,
+        "height": 361,
+        "bytes": 37870
+      },
+      {
+        "src": "assets/projects/troi-mua/rooster-faces-1280.webp",
+        "width": 1280,
+        "height": 723,
+        "bytes": 128588
+      },
+      {
+        "src": "assets/projects/troi-mua/rooster-faces-2048.webp",
+        "width": 2048,
+        "height": 1157,
+        "bytes": 298066
+      }
+    ]
+  },
+  "frame-aerial": {
+    "source": "pictures/Project Troi Mua Cho Moi Bat Ga/7cffba3c-06bc-4980-83e6-3e72955a4a02.png",
+    "sourceBytes": 11905017,
+    "sourceSha256": "90b98fc1fd448090916ab0ac943ba4bbfb4614b468390546a215724445c21fc3",
+    "sourceWidth": 2720,
+    "sourceHeight": 1536,
+    "variants": [
+      {
+        "src": "assets/projects/troi-mua/frame-aerial-640.webp",
+        "width": 640,
+        "height": 361,
+        "bytes": 89386
+      },
+      {
+        "src": "assets/projects/troi-mua/frame-aerial-1280.webp",
+        "width": 1280,
+        "height": 723,
+        "bytes": 347136
+      },
+      {
+        "src": "assets/projects/troi-mua/frame-aerial-2048.webp",
+        "width": 2048,
+        "height": 1157,
+        "bytes": 854432
+      }
+    ]
+  },
+  "frame-flight": {
+    "source": "pictures/Project Troi Mua Cho Moi Bat Ga/hf_20261012_040927_2d2ac188-d5ae-4c71-b690-6589d7ea2b85_min.png",
+    "sourceBytes": 6396789,
+    "sourceSha256": "6b55e177423a161726138a94539169b6cb0910df3f4bd88f9069a90c15109ff8",
+    "sourceWidth": 2720,
+    "sourceHeight": 1536,
+    "variants": [
+      {
+        "src": "assets/projects/troi-mua/frame-flight-640.webp",
+        "width": 640,
+        "height": 361,
+        "bytes": 56344
+      },
+      {
+        "src": "assets/projects/troi-mua/frame-flight-1280.webp",
+        "width": 1280,
+        "height": 723,
+        "bytes": 153864
+      },
+      {
+        "src": "assets/projects/troi-mua/frame-flight-2048.webp",
+        "width": 2048,
+        "height": 1157,
+        "bytes": 314888
+      }
+    ]
+  },
+  "frame-terraces": {
+    "source": "pictures/Project Troi Mua Cho Moi Bat Ga/hf_20261012_061510_1ff3d81b-d170-4899-97da-c28d56e5b356_min.png",
+    "sourceBytes": 10544737,
+    "sourceSha256": "217b4ff4bc42b1692644b3e568b53c867c11e9ced25dec08561736f50709613e",
+    "sourceWidth": 2720,
+    "sourceHeight": 1536,
+    "variants": [
+      {
+        "src": "assets/projects/troi-mua/frame-terraces-640.webp",
+        "width": 640,
+        "height": 361,
+        "bytes": 64148
+      },
+      {
+        "src": "assets/projects/troi-mua/frame-terraces-1280.webp",
+        "width": 1280,
+        "height": 723,
+        "bytes": 237280
+      },
+      {
+        "src": "assets/projects/troi-mua/frame-terraces-2048.webp",
+        "width": 2048,
+        "height": 1157,
+        "bytes": 617026
+      }
+    ]
+  },
+  "frame-dive": {
+    "source": "pictures/Project Troi Mua Cho Moi Bat Ga/hf_20261012_081115_0c9ee7d1-cb29-4644-ba8d-716b7031440f_min.png",
+    "sourceBytes": 9559560,
+    "sourceSha256": "f89bf06299eb649efc0379a58e1915ba4ea31bb8b74f914af6dab31d93beef0b",
+    "sourceWidth": 2720,
+    "sourceHeight": 1536,
+    "variants": [
+      {
+        "src": "assets/projects/troi-mua/frame-dive-640.webp",
+        "width": 640,
+        "height": 361,
+        "bytes": 60638
+      },
+      {
+        "src": "assets/projects/troi-mua/frame-dive-1280.webp",
+        "width": 1280,
+        "height": 723,
+        "bytes": 204932
+      },
+      {
+        "src": "assets/projects/troi-mua/frame-dive-2048.webp",
+        "width": 2048,
+        "height": 1157,
+        "bytes": 490566
+      }
+    ]
+  },
+  "frame-koi": {
+    "source": "pictures/Project Troi Mua Cho Moi Bat Ga/hf_20261012_084810_26af6908-a2ed-49e3-b0e7-221414ccc828_min.png",
+    "sourceBytes": 8916329,
+    "sourceSha256": "78e25f0805cc38b9a987b87be69eb7504e3200d374ed4e8a62db854b7559b16f",
+    "sourceWidth": 2720,
+    "sourceHeight": 1536,
+    "variants": [
+      {
+        "src": "assets/projects/troi-mua/frame-koi-640.webp",
+        "width": 640,
+        "height": 361,
+        "bytes": 53194
+      },
+      {
+        "src": "assets/projects/troi-mua/frame-koi-1280.webp",
+        "width": 1280,
+        "height": 723,
+        "bytes": 170698
+      },
+      {
+        "src": "assets/projects/troi-mua/frame-koi-2048.webp",
+        "width": 2048,
+        "height": 1157,
+        "bytes": 405142
+      }
+    ]
+  },
+  "frame-crystal": {
+    "source": "pictures/Project Troi Mua Cho Moi Bat Ga/hf_20261012_085132_ce5d882e-7f59-4b6c-b352-fbe8b1ebbc6f_min.png",
+    "sourceBytes": 7907188,
+    "sourceSha256": "83866db5e28bb30fd3fadc9ed9ac5a47a0de32e9f7e6227aecd85fc90a883dad",
+    "sourceWidth": 2720,
+    "sourceHeight": 1536,
+    "variants": [
+      {
+        "src": "assets/projects/troi-mua/frame-crystal-640.webp",
+        "width": 640,
+        "height": 361,
+        "bytes": 50470
+      },
+      {
+        "src": "assets/projects/troi-mua/frame-crystal-1280.webp",
+        "width": 1280,
+        "height": 723,
+        "bytes": 146926
+      },
+      {
+        "src": "assets/projects/troi-mua/frame-crystal-2048.webp",
+        "width": 2048,
+        "height": 1157,
+        "bytes": 314034
+      }
+    ]
+  },
+  "frame-hilltop": {
+    "source": "pictures/Project Troi Mua Cho Moi Bat Ga/hf_20261012_155053_3f11c43d-9365-4034-85d9-d59fd3a05a6a_min.png",
+    "sourceBytes": 8019903,
+    "sourceSha256": "dfefc13661d4913fa25e53a947aa276c56647e6b3a58627cadbbcdc7ac20f7ea",
+    "sourceWidth": 2720,
+    "sourceHeight": 1536,
+    "variants": [
+      {
+        "src": "assets/projects/troi-mua/frame-hilltop-640.webp",
+        "width": 640,
+        "height": 361,
+        "bytes": 64356
+      },
+      {
+        "src": "assets/projects/troi-mua/frame-hilltop-1280.webp",
+        "width": 1280,
+        "height": 723,
+        "bytes": 233230
+      },
+      {
+        "src": "assets/projects/troi-mua/frame-hilltop-2048.webp",
+        "width": 2048,
+        "height": 1157,
+        "bytes": 579152
+      }
+    ]
+  },
+  "frame-landing": {
+    "source": "pictures/Project Troi Mua Cho Moi Bat Ga/hf_20261012_172441_28d2dd5f-189a-4cef-835c-73621b8b7aa6_min.png",
+    "sourceBytes": 5396231,
+    "sourceSha256": "746502dad7fa000a82903c5d6c01268d8eb531b8e8e018828edbe546ed5fc386",
+    "sourceWidth": 2720,
+    "sourceHeight": 1536,
+    "variants": [
+      {
+        "src": "assets/projects/troi-mua/frame-landing-640.webp",
+        "width": 640,
+        "height": 361,
+        "bytes": 40520
+      },
+      {
+        "src": "assets/projects/troi-mua/frame-landing-1280.webp",
+        "width": 1280,
+        "height": 723,
+        "bytes": 127488
+      },
+      {
+        "src": "assets/projects/troi-mua/frame-landing-2048.webp",
+        "width": 2048,
+        "height": 1157,
+        "bytes": 255086
+      }
+    ]
+  },
+  "frame-buffalo": {
+    "source": "pictures/Project Troi Mua Cho Moi Bat Ga/hf_20261014_051754_49c7e1c3-64c3-46b6-ae51-e35f01dd09c7_min.png",
+    "sourceBytes": 10538513,
+    "sourceSha256": "5da14bed46ca89f5d09c837e5fcaf16db974d59901d0a75e872661297bcdaa64",
+    "sourceWidth": 2720,
+    "sourceHeight": 1536,
+    "variants": [
+      {
+        "src": "assets/projects/troi-mua/frame-buffalo-640.webp",
+        "width": 640,
+        "height": 361,
+        "bytes": 67278
+      },
+      {
+        "src": "assets/projects/troi-mua/frame-buffalo-1280.webp",
+        "width": 1280,
+        "height": 723,
+        "bytes": 254118
+      },
+      {
+        "src": "assets/projects/troi-mua/frame-buffalo-2048.webp",
+        "width": 2048,
+        "height": 1157,
+        "bytes": 636692
+      }
+    ]
+  },
+  "frame-ducks": {
+    "source": "pictures/Project Troi Mua Cho Moi Bat Ga/hf_20261014_074649_3b21bddb-c6dc-4f42-8f53-1a12d1a52d84_min.png",
+    "sourceBytes": 10018273,
+    "sourceSha256": "1b997a17fc511f6bf8fc4589338065da874d3bdc1deeeb6666bf4f6be4b57e41",
+    "sourceWidth": 2720,
+    "sourceHeight": 1536,
+    "variants": [
+      {
+        "src": "assets/projects/troi-mua/frame-ducks-640.webp",
+        "width": 640,
+        "height": 361,
+        "bytes": 66366
+      },
+      {
+        "src": "assets/projects/troi-mua/frame-ducks-1280.webp",
+        "width": 1280,
+        "height": 723,
+        "bytes": 277822
+      },
+      {
+        "src": "assets/projects/troi-mua/frame-ducks-2048.webp",
+        "width": 2048,
+        "height": 1157,
+        "bytes": 597342
+      }
+    ]
   }
 }

@@ -22,6 +22,8 @@ window.PROJECT_STORIES = {
         {image:'location-village',title:'Village',alt:'Village houses, bamboo and a pond beneath a blue painted ocean sky'},
         {image:'location-lane',title:'Village alley',alt:'Brick village alley between moss-covered tiled houses'},
         {image:'location-terraces',title:'Rice terraces',alt:'Green rice terraces, a large tree and village buildings beneath the ocean sky'},
+        {image:'location-rooftop',title:'Rooftops',alt:'Mossy tiled rooftops beneath a swirling painted sky'},
+        {image:'location-valley',title:'Valley village',alt:'Village and lotus pond in a valley of rice terraces'},
         {image:'location-ocean',title:'Ocean sky',alt:'Carp swimming through the sunlit ocean sky'}
       ]
     },
@@ -39,9 +41,10 @@ window.PROJECT_STORIES = {
       introduction: 'Visual development, shot planning, AI animation and sound production by Yokamination Entertainment.',
       sections: [
         {title:'Art direction',text:'Oil-pastel strokes, coloured pencil and paper grain define the film\'s visual style. A shared style reference maintains the palette, lighting and surface texture across characters, environments and props.'},
-        {title:'Character development',text:'Multi-angle design sheets establish costume, proportions and silhouette. A six-expression study guides the lead character\'s facial animation and appearance across shots.',images:[{image:'faces',title:'Lead character / Expression sheet',alt:'Six facial expressions for the lead character'}]},
+        {title:'Character development',text:'Multi-angle design sheets establish costume, proportions and silhouette. A six-expression study guides the lead character\'s facial animation and appearance across shots.',images:[{image:'faces',title:'The Boy',alt:'Six facial expressions for the lead character'},{image:'rooster-faces',title:'The Rooster',alt:'Eight facial expressions for the rooster'}]},
         {title:'Storyboard and animation',text:'Storyboard sketches establish composition and camera angle. Finished keyframes define lighting and character detail before animation. Shot-specific prompts and start/end frames control movement and continuity.',images:[{image:'sketch',title:'01 / Storyboard',alt:'Pencil storyboard of the boy falling from a village rooftop'},{image:'keyframe',title:'02 / Keyframe',alt:'Finished painted keyframe of the boy falling beneath the ocean sky'}]},
-        {title:'Prop design',text:'The bamboo fishing rod catches the living crystals. Each crystal contains a lost verse. The Lullaby Mill releases those verses, and the Lullaby Map records the route between them.',images:[{image:'fishing-rod',title:'Bamboo fishing rod',alt:'Bamboo fishing rod design sheet with a handmade wooden reel'},{image:'crystal',title:'Lullaby crystal',alt:'Painted crystal containing a small landscape and a fragment of the lullaby'}]}
+        {title:'Prop design',text:'The bamboo fishing rod catches the living crystals. Each crystal contains a lost verse. The Lullaby Mill releases those verses, and the Lullaby Map records the route between them.',images:[{image:'fishing-rod',title:'Bamboo fishing rod',alt:'Bamboo fishing rod design sheet with a handmade wooden reel'},{image:'crystal',title:'Lullaby crystal',alt:'Painted crystal containing a small landscape and a fragment of the lullaby'}]},
+        {title:'Frames',text:'',images:[{image:'frame-aerial',title:'Village from above',alt:'Village from above — film frame'},{image:'frame-flight',title:'Take-off',alt:'Take-off — film frame'},{image:'frame-terraces',title:'Over the terraces',alt:'Over the terraces — film frame'},{image:'frame-hilltop',title:'Hilltop',alt:'Hilltop — film frame'},{image:'frame-dive',title:'Into the ocean sky',alt:'Into the ocean sky — film frame'},{image:'frame-koi',title:'Among the koi',alt:'Among the koi — film frame'},{image:'frame-crystal',title:'The crystal',alt:'The crystal — film frame'},{image:'frame-landing',title:'Landing',alt:'Landing — film frame'},{image:'frame-buffalo',title:'Measuring rice',alt:'Measuring rice — film frame'},{image:'frame-ducks',title:'Ploughing ducks',alt:'Ploughing ducks — film frame'}]}
       ]
     },
     music: [

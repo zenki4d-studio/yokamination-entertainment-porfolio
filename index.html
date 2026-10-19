@@ -7,9 +7,11 @@
 <link rel="icon" type="image/png" href="assets/yokamination-silver-transparent.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="v2.css?v=1">
+<link rel="stylesheet" href="v2.css?v=7">
 <script src="assets/catalog.js?v=14" defer></script>
-<script src="v2.js?v=1" defer></script>
+<script src="assets/project-stories.js?v=3" defer></script>
+<script src="assets/project-artwork.js?v=4" defer></script>
+<script src="v2.js?v=8" defer></script>
 </head>
 <body data-view="home">
 <header class="bar">
@@ -18,7 +20,6 @@
     <ul class="filters" id="filters" aria-label="Filter work"></ul></div>
   <div class="nav-col"><a href="#team" data-nav="team">Team</a></div>
   <div class="nav-col"><a href="#about" data-nav="about"><span class="plus">+</span> About</a></div>
-  <div class="nav-col right"><a href="#contact" data-nav="contact">Contact</a></div>
 </header>
 
 <main>
@@ -28,38 +29,45 @@
   <!-- Work grid -->
   <section class="view work" id="work" aria-label="Work"><div class="grid" id="grid"></div></section>
 
-  <!-- Team -->
+  <!-- Team: lens carousel -->
   <section class="view team" id="team" aria-label="Team">
+    <video class="team-bg" muted loop playsinline preload="none" aria-hidden="true"></video>
+    <div class="lens" aria-hidden="true"><img class="lens-top" alt=""><img class="lens-bot" alt=""></div>
     <p class="team-head"><b>YOKAMINATION</b> <span>The people</span></p>
-    <div class="team-stage">
-      <ul class="team-names" id="team-names"></ul>
-      <figure class="team-photo"><img id="team-img" alt=""></figure>
-      <ul class="team-roles" id="team-roles"></ul>
-    </div>
+    <ul class="team-names" id="team-names"></ul>
+    <figure class="team-photo"><img id="team-img" alt=""></figure>
+    <ul class="team-roles" id="team-roles"></ul>
   </section>
 
-  <!-- About -->
-  <section class="view about" id="about" aria-label="About">
-    <video class="bg" muted loop playsinline preload="none" data-bg></video>
-    <div class="about-body">
-      <p class="lab">A:</p>
-      <p class="big">Yokamination is an independent AI film &amp; visual studio. Human vision, built with new tools — films, animation and product advertising from idea to final frame.</p>
-      <div class="cols">
-        <div><p class="lab">S:</p><p>AI Film<br>Animation<br>3D Product<br>Social Content</p></div>
-        <div><p class="lab">F:</p><p>Founded by Viet Nguyen<br>Ho Chi Minh City, Viet Nam</p></div>
-      </div>
+  <!-- Project detail -->
+  <section class="view project" id="project" aria-label="Project">
+    <div class="p-hero"><video id="p-video" muted loop playsinline></video>
+      <h2 class="p-title" id="p-title"></h2>
+      <button class="p-play" id="p-play" type="button">Play with sound ↗</button></div>
+    <div class="p-info">
+      <a class="p-back" href="#work">Back</a>
+      <dl class="p-facts" id="p-facts"></dl>
+      <p class="p-sum" id="p-sum"></p>
     </div>
+    <div class="p-gallery" id="p-gallery"></div>
+    <div class="p-credits" id="p-credits"></div>
+    <nav class="p-next" id="p-next"></nav>
   </section>
 
-  <!-- Contact -->
-  <section class="view contact" id="contact" aria-label="Contact">
+  <!-- About + contact -->
+  <section class="view about" id="about" aria-label="About and contact">
     <video class="bg gray" muted loop playsinline preload="none" data-bg></video>
-    <div class="contact-body">
+    <div class="about-body">
       <p class="lab">M:</p>
-      <a class="madness" href="mailto:yokamination@gmail.com">Start the story</a>
-      <div class="cols">
+      <div class="lead">
+        <a class="madness" href="mailto:yokamination@gmail.com">Start the story</a>
+        <p class="big">Yokamination is an independent AI film &amp; visual studio — films, animation and product advertising, from idea to final frame.</p>
+      </div>
+      <div class="info-grid">
         <div><p class="lab">E:</p><small>For all inquiries</small><a href="mailto:yokamination@gmail.com">yokamination@gmail.com</a></div>
-        <div><p class="lab">S:</p><a href="https://www.facebook.com/vietnguyennh/" target="_blank" rel="noopener">Facebook</a></div>
+        <div><p class="lab">A:</p><p>160/40 Le Trong Tan, An Khe<br>Da Nang, Viet Nam</p></div>
+        <div><p class="lab">P:</p><a href="tel:+84777744896">+84 777 744 896</a></div>
+        <div><p class="lab">S:</p><p class="socials"><a href="https://www.facebook.com/vietnguyennh/" target="_blank" rel="noopener">Facebook</a><a href="https://zalo.me/84777744896" target="_blank" rel="noopener">Zalo</a><span>LinkedIn</span><span>TikTok</span></p></div>
       </div>
     </div>
   </section>
@@ -67,6 +75,5 @@
 
 <footer class="foot"><span>© 2026</span><button id="sound" type="button" aria-pressed="false">Sound off</button><span id="clock"></span></footer>
 
-<dialog id="player"><button id="close" type="button">Close ✕</button><video id="pv" controls playsinline></video><p id="pt"></p></dialog>
 </body>
 </html>
