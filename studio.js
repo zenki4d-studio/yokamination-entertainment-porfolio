@@ -3,16 +3,16 @@
   function redirectStudio(){if(location.hash==='#about'){location.replace(`studio.html${location.search}`);return true}return false}
   if(redirectStudio())return;
   const films=window.FILMS||[];
-  // Replace these summaries with approved case-study copy when production material is available.
+  // Project summaries for the film collection.
   const projects=[
     {slug:'the-ai-kuroichi',title:'The AI Kuroichi',type:'AI Game Cinematic',film:films.find(f=>f.filename==='The Ai Kuroichi.mp4'),summary:'An AI game cinematic from Yokamination. Watch the complete film above.'},
     {slug:'montage-ai-flow',title:'Montage AI Flow',type:'Montage AI Catalog',film:films.find(f=>f.filename==='Montage AI Flow.mp4'),summary:'A selection of Yokamination AI imagery, brought together in one showreel.'},
-    {slug:'canh-chim-lac-hong',title:'Cánh chim Lạc Hồng',type:'AI Cartoon',film:films.find(f=>f.filename==='261015_Trailer_Cánh chim Lạc Hồng_4K 16_9.mp4'),summary:'An AI animated trailer. Watch the full Cánh chim Lạc Hồng trailer above.'},
-    {slug:'troi-mua-cho-moi-an-ga',title:'Trời mưa cho mối ăn gà',type:'AI Cartoon',film:films.find(f=>f.filename==='261014 - Troi Mua Cho Moi Bat Ga.mp4'),summary:'An AI animated film from the Yokamination collection. Watch the complete film above.'},
+    {slug:'canh-chim-lac-hong',title:'Wings of Lac Hong',type:'AI Cartoon',film:films.find(f=>f.filename==='261015_Trailer_Cánh chim Lạc Hồng_4K 16_9.mp4'),summary:'An AI animated trailer. Watch the full Wings of Lac Hong trailer above.'},
+    {slug:'troi-mua-cho-moi-an-ga',title:'When Termites Hunt the Rooster',type:'AI Cartoon',film:films.find(f=>f.filename==='261014 - Troi Mua Cho Moi Bat Ga.mp4'),summary:'An AI animated film from the Yokamination collection. Watch the complete film above.'},
     {slug:'angle-valve-ad',title:'Angle Valve Ad',type:'AI 3D Product',film:films.find(f=>f.filename==='260827 -  Angle valve Ad.mov'),summary:'A product advertising film featuring an angle valve. Watch the complete film above.'}
   ].filter(p=>p.film);
   const groupLabels={'AI GAME CINEMATIC':'AI Game Cinematic','MONTAGE AI CATALOG':'Montage AI Catalog','AI CARTOON':'AI Cartoon','AI 3D PRODUCT':'AI 3D Product','AI SOCIAL':'AI Social'};
-  const displayTitles={'261001 - Design P-Trap Ad.mp4':'Design P-Trap Ad','260629_Toillet Brush Ad 24fps.mov':'Toilet Brush Ad','260520 Upwork - 1 Curtain Rod no Drilling Video Ad Conzept.mp4':'Curtain Rod — No Drilling','TIKTOPSHOP AI.mp4':'TikTok Shop AI','7. GrowPlus+ Váng Sữa_1.mp4':'GrowPlus+ Váng Sữa'};
+  const displayTitles={'261001 - Design P-Trap Ad.mp4':'Design P-Trap Ad','260629_Toillet Brush Ad 24fps.mov':'Toilet Brush Ad','260520 Upwork - 1 Curtain Rod no Drilling Video Ad Conzept.mp4':'Curtain Rod — No Drilling','TIKTOPSHOP AI.mp4':'TikTok Shop AI','7. GrowPlus+ Váng Sữa_1.mp4':'GrowPlus+ Milk Dessert'};
   const supporting=films.filter(f=>!projects.some(p=>p.film.id===f.id)).map(f=>({slug:`film-${f.id}`,title:displayTitles[f.filename]||f.title,type:groupLabels[f.group]||f.group,film:f}));
   const allProjects=[...projects,...supporting];
   const heroProjects=projects;
@@ -64,7 +64,14 @@
     };
     v.poster=url(p.film.poster);v.src=url(p.film.src);v.load();
   }
-  function open(p){stop();if(!dialog.open)returnFocus=document.activeElement;$('#project-title').textContent=p.title;$('#project-type').textContent=p.type;$('#project-summary').textContent=p.summary||'';['.project-overview','.process-heading','.process-grid'].forEach(s=>$(s).hidden=!p.summary);video.src=url(p.film.src);video.poster=url(p.film.poster);$('#original').href=url(p.film.src);$('#video-error').hidden=true;if(!dialog.open)dialog.showModal();syncHeroPlayback();dialog.scrollTop=0;$('#project-title').focus({preventScroll:true})}
+  function open(p){
+    stop();if(!dialog.open)returnFocus=document.activeElement;
+    $('#project-title').textContent=p.title;$('#project-type').textContent=p.type;$('#project-summary').textContent=p.summary||'';
+    const showcase=Boolean(window.renderProjectStory?.(p));$('.project-overview').hidden=showcase||!p.summary;
+    dialog.dataset.project=p.slug;
+    video.src=url(p.film.src);video.poster=url(p.film.poster);$('#original').href=url(p.film.src);$('#video-error').hidden=true;
+    if(!dialog.open)dialog.showModal();syncHeroPlayback();dialog.scrollTop=0;$('#project-title').focus({preventScroll:true});
+  }
   function route(){if(redirectStudio())return;const hash=location.hash==='#project/the-ai-koreichi'?'#project/the-ai-kuroichi':location.hash;const p=allProjects.find(p=>hash===`#project/${p.slug}`);if(p)open(p);else if(dialog.open)dialog.close()}
   window.addEventListener('scroll',()=>{if(active){const r=active.link.getBoundingClientRect();if(r.bottom<=0||r.top>=innerHeight)stop()}syncHeroPlayback()},{passive:true});
   function projectCard(p){
@@ -195,7 +202,7 @@
   function playIntro(){
     stop();restoreIntroFocus=document.activeElement===document.body?$('.site-header .logo'):document.activeElement;
     intro.hidden=false;intro.classList.remove('playing');document.body.classList.add('intro-running');introBackground.forEach(el=>el.inert=true);$('#skip-intro').focus({preventScroll:true});
-    void intro.offsetWidth;intro.classList.add('playing');clearTimeout(introTimer);introTimer=setTimeout(finishIntro,reducedMotion.matches?500:6500);
+    void intro.offsetWidth;intro.classList.add('playing');clearTimeout(introTimer);introTimer=setTimeout(finishIntro,reducedMotion.matches?200:4500);
   }
   $('#skip-intro').addEventListener('click',finishIntro);
   reducedMotion.addEventListener('change',e=>{if(e.matches){stop();finishIntro()}});

@@ -24,8 +24,8 @@ The full-screen opening rotates in this order:
 
 1. The AI Kuroichi.
 2. Montage AI Flow.
-3. Cánh chim Lạc Hồng.
-4. Trời mưa cho mối ăn gà.
+3. Wings of Lac Hong.
+4. When Termites Hunt the Rooster.
 5. Angle Valve Ad (`260827 -  Angle valve Ad.mov`).
 
 Each muted preview starts around 3 seconds into its film, plays for 7 seconds, then advances. The progress line follows actual playback, so buffering and pauses do not consume the preview. Select a title to switch immediately, or use Pause previews / Play previews. Rotation does not move keyboard focus.
@@ -50,10 +50,18 @@ The catalogue includes each original source path, its web copy, duration and dim
 
 Before publishing, browser-check automatic playback and transitions, filters, pagination, full-film playback and mobile layout. Static checks verify media coverage and files but do not prove browser playback. Deploy HTML, CSS, JavaScript and `assets/` together on a host supporting byte-range video requests; the generated web copies are used by the website.
 
+## Project showcase and image delivery
+
+`#project/troi-mua-cho-moi-an-ga` presents the film as When Termites Hunt the Rooster. Client-facing copy describes the film, all seven characters, four environment designs, storyboard/keyframe development, props, soundtrack and credited team. Runtime and screenplay-development labels are omitted. Character and soundtrack labels use English; personal names retain their spelling without Vietnamese diacritics. Copy is editable in `assets/project-stories.js`; layout and rendering use `project-showcase.css` and `project-showcase.js`.
+
+Seventeen curated artworks have local responsive WebP derivatives at 640, 1280 and up to 2048px, with lazy loading and accurate image dimensions. Clicking artwork opens its 2K web copy. Originals remain unchanged in `pictures/Project Troi Mua Cho Moi Bat Ga/`; the PowerPoint stays outside the website. Rebuild with `python scripts/build_project_images.py --deck PATH_TO_PORTFOLIO.pptx`. `assets/projects/troi-mua/manifest.json` records source hashes and derivative dimensions; `assets/project-artwork.js` is its lightweight browser manifest. No Drive sharing links are required by the website.
+
+The home brand intro now lasts about 3.55 seconds (previously 5.55), with the same reveal sequence and simultaneous m / nation reveal. Film preview duration stays at seven seconds.
+
 ## Studio and branding
 
-The Studio menu and Meet the Studio link open `studio.html`. Human vision and all personnel have moved completely off the home page. The Studio page presents one person at a time: Việt Nguyễn, Thiện Phước and Anh Tuấn. Previous/next buttons and arrow keys switch people manually; there is no automatic rotation. The counter and screen-reader status identify the current person. Profile links (`#person-viet`, `#person-phuoc`, `#person-tuan`) select a person directly. Legacy home `#about` links redirect to the new page.
+The Studio menu and Meet the Studio link open `studio.html`. Human vision and all personnel have moved completely off the home page. The Studio page presents one person at a time: Viet Nguyen, Thien Phuoc and Anh Tuan. Previous/next buttons and arrow keys switch people manually; there is no automatic rotation. The counter and screen-reader status identify the current person. Profile links (`#person-viet`, `#person-phuoc`, `#person-tuan`) select a person directly. Legacy home `#about` links redirect to the new page.
 
-Việt Nguyễn is identified as Founder of Yokamination and Co-founder of Zen AI, with an introductory biography. Original silver Yokamination artwork is shared by the header, footer, portrait emblems and home opening animation. The home intro can be skipped or dismissed with Escape; deep links and reduced-motion visitors bypass it.
+Viet Nguyen is identified as Founder of Yokamination and Co-founder of Zen AI, with an introductory biography. Original silver Yokamination artwork is shared by the header, footer, portrait emblems and home opening animation. The home intro can be skipped or dismissed with Escape; deep links and reduced-motion visitors bypass it.
 
 Contact uses `yokamination@gmail.com`. Facebook is configured; Instagram, TikTok and X remain disabled until confirmed profile links are supplied. Google Fonts has a local sans-serif fallback. The older `portfolio.css` and `portfolio.js` are no longer loaded.

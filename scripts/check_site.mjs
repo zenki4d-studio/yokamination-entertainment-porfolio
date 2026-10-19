@@ -11,6 +11,8 @@ const html = read('index.html');
 const studioHtml = read('studio.html');
 const context = {window: {}};
 vm.runInNewContext(read('assets/catalog.js'), context);
+vm.runInNewContext(read('assets/project-stories.js'), context);
+vm.runInNewContext(read('assets/project-artwork.js'), context);
 const films = context.window.FILMS;
 assert.ok(films.length > 0, 'Catalogue must not be empty');
 assert.equal(new Set(films.map(f => f.id)).size, films.length, 'Film IDs must be unique');
@@ -29,6 +31,19 @@ if (checkSources) {
 }
 
 const dependencies = new Set(['index.html', 'studio.html', 'studio.css', 'studio.js', 'studio-page.css', 'studio-page.js', 'assets/catalog.js']);
+for (const image of Object.values(context.window.PROJECT_ARTWORK)) {
+  assert.equal(new Set(image.variants.map(v => v.width)).size, image.variants.length, 'Responsive image widths must be unique');
+  for (const variant of image.variants) {
+    dependencies.add(variant.src);
+    assert.ok(variant.width <= 2048 && variant.height <= 2048, 'Project images must fit within 2K');
+  }
+}
+const checkArtworkReferences = value => {
+  if (!value || typeof value !== 'object') return;
+  if (value.image) assert.ok(context.window.PROJECT_ARTWORK[value.image], `Missing project artwork: ${value.image}`);
+  Object.values(value).forEach(checkArtworkReferences);
+};
+checkArtworkReferences(context.window.PROJECT_STORIES);
 for (const match of (html + studioHtml).matchAll(/(?:src|href)="([^"]+)"/g)) {
   const path = match[1].split(/[?#]/)[0];
   if (path && !/^(?:[a-z]+:|\/\/)/i.test(path)) dependencies.add(path);
@@ -66,7 +81,7 @@ assert.ok(!html.includes('Human vision.') && !html.includes('data-team-slide') &
   'Studio and people must be on their own page');
 assert.equal((html.match(/href="studio.html"/g) || []).length, 2, 'Both home Studio links must open the separate page');
 assert.equal((studioHtml.match(/data-team-slide\s/g) || []).length, 3);
-for (const name of ['Việt Nguyễn', 'Thiện Phước', 'Anh Tuấn']) assert.ok(studioHtml.includes(`data-name="${name}"`));
+for (const name of ['Viet Nguyen', 'Thien Phuoc', 'Anh Tuan']) assert.ok(studioHtml.includes(`data-name="${name}"`));
 assert.ok(studioHtml.includes('Founder, Yokamination') && studioHtml.includes('Co-founder, Zen AI'));
 assert.equal((studioHtml.match(/href="#portrait-silver-y"/g) || []).length, 3);
 assert.ok(studioHtml.includes('id="portrait-silver-y"'));

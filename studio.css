@@ -63,17 +63,17 @@ body.intro-running{overflow:hidden}
 #skip-intro{position:absolute;right:var(--gutter);bottom:32px;padding:12px 0;background:none;border:0;border-bottom:1px solid #777;font-size:11px;color:var(--paper)}
 #skip-intro:focus-visible{outline-color:var(--paper)}
 .intro-progress{position:absolute;bottom:0;left:0;height:2px;width:100%;background:#b9bebc;transform:scaleX(0);transform-origin:left}
-.brand-intro.playing{animation:intro-exit .65s 4.9s cubic-bezier(.76,0,.24,1) both}
-.playing .intro-letter-stage{animation:intro-stage-scale 5s var(--ease) both}
-.playing .glyph-y{animation:intro-y 5s var(--ease) both}
-.playing .glyph-oka{animation:intro-oka 5s var(--ease) both}
-.playing .glyph-i{animation:intro-i 5s var(--ease) both}
+.brand-intro.playing{animation:intro-exit .416s 3.136s cubic-bezier(.76,0,.24,1) both}
+.playing .intro-letter-stage{animation:intro-stage-scale 3.2s var(--ease) both}
+.playing .glyph-y{animation:intro-y 3.2s var(--ease) both}
+.playing .glyph-oka{animation:intro-oka 3.2s var(--ease) both}
+.playing .glyph-i{animation:intro-i 3.2s var(--ease) both}
 .playing .glyph-m,.playing .glyph-nation{opacity:1}
-.playing #glyph-m rect{animation:intro-reveal-m 1.1s 2.6s var(--ease) both}
-.playing #glyph-nation rect{animation:intro-reveal-nation 1.1s 2.6s var(--ease) both}
-.playing .intro-subtitle{animation:intro-subtitle .6s 3.7s var(--ease) both}
-.playing .intro-complete-logo{animation:intro-complete 5s var(--ease) both}
-.playing .intro-progress{animation:intro-progress 4.9s linear both}
+.playing #glyph-m rect{animation:intro-reveal-m .704s 1.664s var(--ease) both}
+.playing #glyph-nation rect{animation:intro-reveal-nation .704s 1.664s var(--ease) both}
+.playing .intro-subtitle{animation:intro-subtitle .384s 2.368s var(--ease) both}
+.playing .intro-complete-logo{animation:intro-complete 3.2s var(--ease) both}
+.playing .intro-progress{animation:intro-progress 3.136s linear both}
 @keyframes intro-stage-scale{0%,18%{transform:scale(1.7)}30%,100%{transform:scale(1)}}
 @keyframes intro-y{0%{opacity:0;transform:translate(895px,18px) scale(.9)}10%,18%{opacity:1;transform:translate(895px,0) scale(1.2)}30%,42%{opacity:1;transform:translate(610px,0) scale(1)}52%,100%{opacity:1;transform:translate(0,0)}}
 @keyframes intro-oka{0%,21%{opacity:0;transform:translate(610px,15px)}30%,42%{opacity:1;transform:translate(610px,0)}52%,100%{opacity:1;transform:translate(0,0)}}

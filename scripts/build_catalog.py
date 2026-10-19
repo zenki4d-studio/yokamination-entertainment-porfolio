@@ -28,13 +28,13 @@ EXTENSIONS = {'.mp4', '.mov', '.m4v', '.webm', '.mkv'}
 TITLES = {
     'The Ai Kuroichi.mp4': 'The Ai Kuroichi',
     'Montage AI Flow.mp4': 'Montage AI Flow',
-    '261015_Trailer_Cánh chim Lạc Hồng_4K 16_9.mp4': 'Trailer Cánh chim Lạc Hồng',
-    '261014 - Troi Mua Cho Moi Bat Ga.mp4': 'Trời mưa cho mối ăn gà',
+    '261015_Trailer_Cánh chim Lạc Hồng_4K 16_9.mp4': 'Wings of Lac Hong',
+    '261014 - Troi Mua Cho Moi Bat Ga.mp4': 'When Termites Hunt the Rooster',
     '260827 -  Angle valve Ad.mov': 'Angle Valve Ad',
     '260629_Toillet Brush Ad 24fps.mov': 'Toilet Brush Ad',
     '261001 - Design P-Trap Ad.mp4': 'Design P-Trap Ad',
     '260520 Upwork - 1 Curtain Rod no Drilling Video Ad Conzept.mp4': 'Upwork — No-Drill Curtain Rod Ad',
-    '7. GrowPlus+ Váng Sữa_1.mp4': 'GrowPlus+ Váng Sữa',
+    '7. GrowPlus+ Váng Sữa_1.mp4': 'GrowPlus+ Milk Dessert',
     'TIKTOPSHOP AI.mp4': 'TikTok Shop AI',
 }
 HERO_FILENAMES = (
