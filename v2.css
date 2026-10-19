@@ -1,0 +1,111 @@
+:root{--fg:#fff;--dim:rgba(255,255,255,.45);--bg:#000;--pad:18px;--accent:#c8ced6}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--bg);color:var(--fg)}
+body{font:600 14px/1.35 "Inter Tight",Helvetica,Arial,sans-serif;letter-spacing:-.01em;overflow:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+ul{list-style:none}
+
+/* Header: logo + 4 links spread across the width */
+.bar{position:fixed;inset:0 0 auto;z-index:20;display:grid;grid-template-columns:1fr 1fr 1fr 1fr 1fr;gap:var(--pad);padding:14px var(--pad);pointer-events:none}
+.bar>*{pointer-events:auto}
+.logo svg{height:20px;width:auto;display:block}
+.nav-col{position:relative}
+.nav-col.right{text-align:right}
+.nav-col>a{padding:0 2px;transition:background .2s,color .2s}
+.nav-col>a:hover,.nav-col>a.on{background:var(--fg);color:#000}
+.plus{display:inline-block;transition:transform .3s}
+body[data-view=about] .plus{transform:rotate(45deg)}
+.filters{position:absolute;top:26px;left:0;display:none;font-size:14px;line-height:1.85}
+body[data-view=work] .filters{display:block}
+.filters button{color:var(--dim);text-align:left}
+.filters button.on,.filters button:hover{color:var(--fg)}
+.filters sup{font-size:9px;margin-left:2px}
+
+/* Views */
+.view{position:fixed;inset:0;visibility:hidden;opacity:0;transition:opacity .45s,visibility .45s;overflow:auto}
+body[data-view=home] #reel,body[data-view=work] #work,body[data-view=team] #team,body[data-view=about] #about,body[data-view=contact] #contact{visibility:visible;opacity:1}
+.lab{color:var(--fg);opacity:.75}
+
+/* Endless reel */
+.reel{scroll-snap-type:y mandatory;scrollbar-width:none}
+.reel::-webkit-scrollbar{display:none}
+.slide{position:relative;height:100vh;height:100svh;scroll-snap-align:start;overflow:hidden;cursor:pointer;background:#050505}
+.slide video,.slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.slide img{transition:opacity .6s}
+.slide.playing img{opacity:0}
+.slide::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 60%,rgba(0,0,0,.45))}
+.meta{position:absolute;inset:0;z-index:2;display:grid;grid-template-columns:1fr 1fr 1fr 1fr 1fr;gap:var(--pad);padding:var(--pad);pointer-events:none}
+.meta .mid{grid-row:1;align-self:center}
+.meta .p{grid-column:1}.meta .t{grid-column:2/5;text-transform:uppercase}.meta .y{grid-column:5;text-align:right}
+.meta .c{grid-row:2;align-self:end;grid-column:1}.meta .cv{grid-row:2;align-self:end;grid-column:2/5}
+.meta{grid-template-rows:1fr auto;padding-bottom:56px}
+
+/* Work grid */
+.work{padding:0}
+.grid{display:grid;grid-template-columns:1fr 1fr;padding-bottom:60px}
+.card{cursor:pointer}
+.card .media{position:relative;aspect-ratio:16/9;overflow:hidden;background:#0b0b0b}
+.card .media img,.card .media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.card .media video{opacity:0;transition:opacity .3s}
+.card:hover .media video{opacity:1}
+.card .info{display:grid;grid-template-columns:110px 1fr auto;padding:14px var(--pad) 70px}
+.card .n{color:var(--dim)}
+.card .yr{color:var(--dim)}
+.card.hide{display:none}
+
+/* Team */
+.team{display:grid;place-items:center}
+.team-head{position:absolute;top:22%;left:50%;transform:translateX(-50%);display:flex;gap:28px;white-space:nowrap}
+.team-head span{color:var(--dim)}
+.team-stage{display:grid;grid-template-columns:1fr 320px 1fr;gap:60px;align-items:center;width:min(1180px,100% - 2*var(--pad))}
+.team-names,.team-roles{display:grid;gap:26px}
+.team-roles{text-align:right}
+.team-names li,.team-roles li{color:rgba(255,255,255,.18);transition:color .3s;cursor:pointer}
+.team-names li.on,.team-roles li.on{color:var(--fg)}
+.team-photo{aspect-ratio:3/4;overflow:hidden;background:#111}
+.team-photo img{width:100%;height:100%;object-fit:cover;transition:opacity .35s}
+
+/* About / contact */
+.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.45}
+.bg.gray{filter:grayscale(1) contrast(1.05);opacity:.55}
+.about-body,.contact-body{position:relative;z-index:1;min-height:100%;display:grid;align-content:end;gap:28px;padding:120px var(--pad) 70px;grid-template-columns:1fr 3fr;column-gap:var(--pad)}
+.about-body>.lab,.contact-body>.lab{grid-column:1}
+.big{grid-column:2;font-size:clamp(26px,3.4vw,52px);line-height:1.08;letter-spacing:-.03em;max-width:18em}
+.cols{grid-column:1/3;display:grid;grid-template-columns:1fr 3fr;gap:var(--pad)}
+.cols>div{display:grid;gap:6px;align-content:start}
+.cols>div:nth-child(2){grid-column:2}
+.contact-body .cols{grid-template-columns:1fr 1fr 2fr}
+.contact-body .cols>div:nth-child(2){grid-column:2}
+small{font-size:10px;color:var(--dim)}
+.madness{grid-column:2;font-size:clamp(40px,5vw,84px);line-height:1;letter-spacing:-.035em;text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:8px;align-self:start;margin-bottom:12vh}
+.madness:hover{color:var(--accent)}
+
+/* Footer */
+.foot{position:fixed;inset:auto 0 0;z-index:20;display:grid;grid-template-columns:1fr 4fr auto;gap:var(--pad);padding:14px var(--pad);font-size:13px;pointer-events:none}
+.foot>*{pointer-events:auto}
+.foot button{justify-self:start;color:var(--dim)}
+.foot button[aria-pressed=true]{color:var(--fg)}
+#clock{font-variant-numeric:tabular-nums}
+
+/* Player */
+dialog{position:fixed;inset:0;width:100%;height:100%;max-width:none;max-height:none;border:0;background:#000;color:#fff;display:none;place-items:center}
+dialog[open]{display:grid}
+dialog video{width:100%;height:100%;object-fit:contain}
+#close{position:absolute;top:14px;right:var(--pad);z-index:2}
+#pt{position:absolute;top:14px;left:var(--pad);text-transform:uppercase}
+
+@media (max-width:760px){
+  .bar{grid-template-columns:auto 1fr 1fr 1fr;gap:12px;font-size:13px}
+  .bar .nav-col:nth-child(3){display:none}
+  .meta{grid-template-columns:40px 1fr auto}
+  .meta .t{grid-column:2}.meta .y{grid-column:3}.meta .cv{grid-column:2/4}
+  .grid{grid-template-columns:1fr}
+  .team-stage{grid-template-columns:1fr;gap:20px;text-align:center}
+  .team-names,.team-roles{display:none}
+  .team-head{top:12%}
+  .about-body,.contact-body{grid-template-columns:1fr}
+  .big,.madness,.cols{grid-column:1}
+  .cols,.contact-body .cols{grid-template-columns:1fr}
+  .cols>div:nth-child(2),.contact-body .cols>div:nth-child(2){grid-column:1}
+}

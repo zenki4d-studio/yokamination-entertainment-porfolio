@@ -3,51 +3,70 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Yokamination — AI Film & Visual Studio</title>
-<meta name="description" content="Yokamination — an independent AI film and visual studio founded by Viet Nguyen. Explore our AI films, animation and product advertising.">
+<meta name="description" content="Yokamination — an independent AI film and visual studio founded by Viet Nguyen.">
 <link rel="icon" type="image/png" href="assets/yokamination-silver-transparent.png">
-<link rel="preload" as="image" href="assets/yokamination-silver-transparent.png"><link rel="stylesheet" href="studio.css?v=14"><link rel="stylesheet" href="project-showcase.css?v=1"><script src="assets/catalog.js?v=14" defer></script><script src="assets/project-stories.js?v=2" defer></script><script src="assets/project-artwork.js?v=3" defer></script><script src="project-showcase.js?v=3" defer></script><script src="studio.js?v=14" defer></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="v2.css?v=1">
+<script src="assets/catalog.js?v=14" defer></script>
+<script src="v2.js?v=1" defer></script>
 </head>
-<body>
-<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute"><defs><filter id="silver-edge" color-interpolation-filters="sRGB"><feMorphology in="SourceAlpha" operator="erode" radius="1.2" result="edge"/><feGaussianBlur in="edge" stdDeviation=".35" result="smooth"/><feComposite in="SourceGraphic" in2="smooth" operator="in"/></filter></defs></svg>
-<div id="brand-intro" class="brand-intro" role="dialog" aria-modal="true" aria-label="Yokamination introduction" hidden>
-<div class="intro-stage" aria-hidden="true">
-<svg class="intro-letter-stage" viewBox="0 0 2172 724" focusable="false">
-<defs><image id="intro-art" href="assets/yokamination-silver-transparent.png" width="2172" height="724" filter="url(#silver-edge)"/><clipPath id="glyph-y"><polygon points="20,155 370,155 326,235 300,270 272,300 244,335 240,480 123,480 123,345 20,345"/></clipPath><clipPath id="glyph-oka"><polygon points="326,235 439,235 439,155 532,155 532,235 823,235 823,480 240,480 244,335 272,300 300,270"/></clipPath><clipPath id="glyph-m"><rect x="823" y="155" width="270" height="325"/></clipPath><clipPath id="glyph-i"><rect x="1093" y="155" width="73" height="325"/></clipPath><clipPath id="glyph-nation"><rect x="1166" y="155" width="980" height="325"/></clipPath><clipPath id="intro-subtitle"><rect x="320" y="486" width="1530" height="108"/></clipPath></defs>
-<g class="intro-glyph glyph-y"><g clip-path="url(#glyph-y)"><use href="#intro-art"/></g></g>
-<g class="intro-glyph glyph-oka"><g clip-path="url(#glyph-oka)"><use href="#intro-art"/></g></g>
-<g class="intro-glyph glyph-m"><g clip-path="url(#glyph-m)"><use href="#intro-art"/></g></g>
-<g class="intro-glyph glyph-i"><g clip-path="url(#glyph-i)"><use href="#intro-art"/></g></g>
-<g class="intro-glyph glyph-nation"><g clip-path="url(#glyph-nation)"><use href="#intro-art"/></g></g>
-<g class="intro-subtitle" clip-path="url(#intro-subtitle)"><use href="#intro-art"/></g>
-<use class="intro-complete-logo" href="#intro-art"/>
-</svg></div>
-<button id="skip-intro" type="button">Skip intro ↗</button><div class="intro-progress" aria-hidden="true"></div>
-</div>
-<a class="skip" href="#work">Skip to work</a>
-<header class="site-header"><a class="logo brand-lockup" href="#home" aria-label="Yokamination home"><svg viewBox="20 155 2130 439" role="img" aria-label="Yokamination Entertainment"><image href="assets/yokamination-silver-transparent.png" width="2172" height="724" filter="url(#silver-edge)"/></svg></a><nav aria-label="Main navigation"><a href="#work">Work <sup id="film-total"></sup></a><a href="studio.html">Studio</a><a href="#connect">Contact ↗</a></nav></header>
-<main id="home">
-<section class="hero" aria-label="Featured film">
-<div id="reel"></div>
-<h1 class="sr-only">Yokamination — AI Film & Visual Studio</h1>
-<div class="hero-bottom"><div id="hero-selector" role="group" aria-label="Featured film selection"></div><div class="hero-actions"><button id="hero-toggle" type="button" aria-controls="reel">Ⅱ Pause previews</button><a class="scroll-link" href="#work">EXPLORE THE WORK <span>↓</span></a></div></div>
-</section>
-<section id="work" class="section archive">
-<div class="section-heading"><span class="eyebrow">01 / THE COLLECTION</span><h2>Work<span class="accent">.</span></h2><a href="studio.html" class="text-link">MEET THE STUDIO ↗</a></div>
-<div class="work-toolbar"><div id="work-filters" role="group" aria-label="Filter work"></div><p id="work-count" aria-live="polite"></p></div>
-<div id="more-grid" class="more-grid"></div><nav id="work-pages" aria-label="Work pages"></nav>
-</section>
-<section id="connect" class="section contact">
-<div class="contact-center"><p class="eyebrow">HAVE SOMETHING IN MIND?</p><a class="contact-title" href="mailto:yokamination@gmail.com"><h2>Let’s talk<span class="accent">.</span></h2></a>
-<a class="email" href="mailto:yokamination@gmail.com">yokamination@gmail.com <span aria-hidden="true">↗</span></a></div>
-</section>
+<body data-view="home">
+<header class="bar">
+  <a class="logo" href="#" aria-label="Yokamination home"><svg viewBox="20 155 2130 439"><image href="assets/yokamination-silver-transparent.png" width="2172" height="724"/></svg></a>
+  <div class="nav-col"><a href="#work" data-nav="work">Work</a>
+    <ul class="filters" id="filters" aria-label="Filter work"></ul></div>
+  <div class="nav-col"><a href="#team" data-nav="team">Team</a></div>
+  <div class="nav-col"><a href="#about" data-nav="about"><span class="plus">+</span> About</a></div>
+  <div class="nav-col right"><a href="#contact" data-nav="contact">Contact</a></div>
+</header>
+
+<main>
+  <!-- Home: endless full-screen reel -->
+  <section class="view reel" id="reel" aria-label="Showreel"></section>
+
+  <!-- Work grid -->
+  <section class="view work" id="work" aria-label="Work"><div class="grid" id="grid"></div></section>
+
+  <!-- Team -->
+  <section class="view team" id="team" aria-label="Team">
+    <p class="team-head"><b>YOKAMINATION</b> <span>The people</span></p>
+    <div class="team-stage">
+      <ul class="team-names" id="team-names"></ul>
+      <figure class="team-photo"><img id="team-img" alt=""></figure>
+      <ul class="team-roles" id="team-roles"></ul>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="view about" id="about" aria-label="About">
+    <video class="bg" muted loop playsinline preload="none" data-bg></video>
+    <div class="about-body">
+      <p class="lab">A:</p>
+      <p class="big">Yokamination is an independent AI film &amp; visual studio. Human vision, built with new tools — films, animation and product advertising from idea to final frame.</p>
+      <div class="cols">
+        <div><p class="lab">S:</p><p>AI Film<br>Animation<br>3D Product<br>Social Content</p></div>
+        <div><p class="lab">F:</p><p>Founded by Viet Nguyen<br>Ho Chi Minh City, Viet Nam</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="view contact" id="contact" aria-label="Contact">
+    <video class="bg gray" muted loop playsinline preload="none" data-bg></video>
+    <div class="contact-body">
+      <p class="lab">M:</p>
+      <a class="madness" href="mailto:yokamination@gmail.com">Start the story</a>
+      <div class="cols">
+        <div><p class="lab">E:</p><small>For all inquiries</small><a href="mailto:yokamination@gmail.com">yokamination@gmail.com</a></div>
+        <div><p class="lab">S:</p><a href="https://www.facebook.com/vietnguyennh/" target="_blank" rel="noopener">Facebook</a></div>
+      </div>
+    </div>
+  </section>
 </main>
-<footer class="site-footer">
-<a class="logo brand-lockup" href="#home" aria-label="Yokamination home"><svg viewBox="20 155 2130 439" role="img" aria-label="Yokamination Entertainment"><image href="assets/yokamination-silver-transparent.png" width="2172" height="724" filter="url(#silver-edge)"/></svg></a>
-<nav class="footer-socials" aria-label="Social media">
-<a href="https://www.facebook.com/vietnguyennh/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M14 21v-8h3l.5-4H14V7c0-1 .3-2 2-2h2V1.5A23 23 0 0 0 15 1c-3 0-5 2-5 5v3H7v4h3v8z"/></svg><span>Facebook</span></a>
-<span class="social-pending" role="link" aria-disabled="true" aria-label="Instagram — profile link not added"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2"/></svg><span>Instagram</span></span>
-<span class="social-pending" role="link" aria-disabled="true" aria-label="TikTok — profile link not added"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M14 2h3c.2 3 1.8 4.7 5 5v3a10 10 0 0 1-5-1.5V16a6 6 0 1 1-7-5.9v3.1a3 3 0 1 0 4 2.8z"/></svg><span>TikTok</span></span>
-<span class="social-pending" role="link" aria-disabled="true" aria-label="X — profile link not added"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M4 3h4.5L20 21h-4.5zM20 3 4 21" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span>X</span></span>
-</nav><a href="#home">BACK TO TOP ↑</a></footer>
-<dialog id="project-dialog" aria-labelledby="project-title"><div class="detail-top"><span class="eyebrow">YOKAMINATION / PROJECT VIEW</span><button id="close-project" aria-label="Close project">Close ✕</button></div><div class="detail-body"><p id="project-type" class="eyebrow"></p><h2 id="project-title" tabindex="-1"></h2><video id="project-video" controls playsinline preload="metadata"></video><p id="video-error" hidden>Playback is unavailable. <a id="original" target="_blank" rel="noopener">Open the film ↗</a></p><div class="project-overview"><h3>About the project</h3><p id="project-summary"></p></div><div id="project-editorial" hidden></div><a class="detail-contact" href="mailto:yokamination@gmail.com">Discuss a project ↗</a></div></dialog>
-</body></html>
+
+<footer class="foot"><span>© 2026</span><button id="sound" type="button" aria-pressed="false">Sound off</button><span id="clock"></span></footer>
+
+<dialog id="player"><button id="close" type="button">Close ✕</button><video id="pv" controls playsinline></video><p id="pt"></p></dialog>
+</body>
+</html>
