@@ -36,6 +36,9 @@
       <video muted loop playsinline preload="auto" poster="${f.heroPoster || f.poster}" src="${src720(f)}"></video>
       <div class="meta"><span class="t">${f.title}</span><span class="cv">${nice(f.group)}<br>${f.duration}</span></div>`;
     const v = $('video', el);
+    // Two films open on a black leader; the reel starts them a few seconds in.
+    const skip = { 'The Ai Kuroichi.mp4': 3, 'Montage AI Flow.mp4': 3 }[f.filename];
+    if (skip) v.addEventListener('loadedmetadata', () => { v.currentTime = skip; }, { once: true });
     v.addEventListener('playing', () => el.classList.add('playing'));
     el.addEventListener('click', () => { if (!dragMoved) location.hash = 'project/' + f.id; });
     reel.appendChild(el);
