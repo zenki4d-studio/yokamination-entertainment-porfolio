@@ -123,9 +123,9 @@
 
   /* ---------- Team ---------- */
   const team = [
-    ['Viet Nguyen', 'Founder · Creative Director', 'assets/viet-nguyen.jpeg'],
-    ['Thien Phuoc', 'Art Director · 3D Generalist', 'assets/thien-phuoc-team.jpg'],
-    ['Anh Tuan', 'AI Film · Visual Production', 'assets/anh-tuan-portrait.png']
+    ['Viet Nguyen', 'Founder · Creative Director', 'assets/team/viet.png'],
+    ['Thien Phuoc', 'Art Director · 3D Generalist', 'assets/team/phuoc.png'],
+    ['Anh Tuan', 'AI Film · Visual Production', 'assets/team/tuan.png']
   ];
   const teamEl = $('#team'), names = $('#team-names'), roles = $('#team-roles'), img = $('#team-img');
   const lensTop = $('.lens-top'), lensBot = $('.lens-bot');

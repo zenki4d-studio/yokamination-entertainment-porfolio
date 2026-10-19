@@ -58,9 +58,9 @@ body[data-view=home] #reel,body[data-view=work] #work,body[data-view=team] #team
 
 /* Team: lens carousel */
 .team{overflow:hidden;background:#0a0a0a}
-.team-bg{position:absolute;inset:-6%;width:112%;height:112%;object-fit:cover;filter:blur(28px) saturate(1.5) brightness(.7);transform:scale(1.05)}
+.team-bg{position:absolute;inset:-6%;width:112%;height:112%;object-fit:cover;filter:blur(36px) saturate(1.4) brightness(.62);transform:scale(1.08)}
 .team::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse 40% 50% at 50% 50%,rgba(255,255,255,.08),transparent 70%)}
-.lens{z-index:1}
+.lens{display:none} /* full blurred film background instead of the lens cut-out */
 .lens{position:absolute;inset:0;perspective:700px;pointer-events:none;
   -webkit-mask:radial-gradient(ellipse 44% 56% at 50% 50%,transparent 98%,#000 100%);mask:radial-gradient(ellipse 44% 56% at 50% 50%,transparent 98%,#000 100%)}
 .lens img{position:absolute;left:-15%;width:130%;height:62%;object-fit:cover;filter:saturate(1.15) brightness(.85);transition:transform .9s cubic-bezier(.7,0,.2,1),opacity .6s}
@@ -75,7 +75,7 @@ body[data-view=home] #reel,body[data-view=work] #work,body[data-view=team] #team
 .team-names,.team-roles{position:absolute;top:50%;width:22%;z-index:2}
 .team-names{left:19.5%}.team-roles{right:19.5%;text-align:right}
 .team-names li,.team-roles li{position:absolute;left:0;right:0;top:0;transform:translateY(calc(-50% + var(--o) * 210px));color:#fff;transition:transform .8s cubic-bezier(.7,0,.2,1),opacity .6s;cursor:pointer;white-space:nowrap}
-.team-photo{position:absolute;left:50%;top:50%;width:min(320px,62vw);aspect-ratio:3/4;transform:translate(-50%,-50%);overflow:hidden;background:#111;z-index:2}
+.team-photo{position:absolute;left:50%;top:50%;width:min(400px,70vw);aspect-ratio:1/1;transform:translate(-50%,-50%);overflow:hidden;background:#111;z-index:2}
 .team-photo img{width:100%;height:100%;object-fit:cover;transition:opacity .4s,transform .8s cubic-bezier(.7,0,.2,1)}
 .team-photo img.out{opacity:0;transform:scale(1.08)}
 
