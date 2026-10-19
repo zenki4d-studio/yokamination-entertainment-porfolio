@@ -16,7 +16,9 @@
 
   // Display names: no "Upwork —" prefix and no studio name inside project titles.
   const clean = t => t.replace(/^Upwork\s*[—–-]\s*/i, '').replace(/\s*\bYokamination\b\s*/gi, ' ').trim();
-  films.forEach(f => f.title = clean(f.title));
+  // These three are one-minute trailers of longer films.
+  const trailers = new Set(['86f05f7694b5', '8cf0fc7e40ce', 'f5aa30040bec']);
+  films.forEach(f => f.title = clean(f.title) + (trailers.has(f.id) ? ' Trailer' : ''));
 
   /* ---------- Endless reel ---------- */
   // Slides are positioned with GPU transforms instead of native scroll: sub-pixel smooth drift,
@@ -121,7 +123,20 @@
   };
   fl.innerHTML = `<li><button data-g="all">All<sup>${films.length}</sup></button></li>` +
     groups.map(g => `<li><button data-g="${g}">${nice(g)}</button></li>`).join('');
-  fl.addEventListener('click', e => { const b = e.target.closest('button'); if (b) setFilter(b.dataset.g); });
+  // Picking a category is what opens the Work grid; the Work tab itself only opens the menu.
+  fl.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; setFilter(b.dataset.g); setMenu(false); location.hash = 'work'; });
+  const workTab = $('[data-nav=work]');
+  const setMenu = open => {
+    if (open) document.body.style.setProperty('--wx', workTab.getBoundingClientRect().left + 'px');
+    document.body.classList.toggle('menu-open', open); workTab.setAttribute('aria-expanded', open);
+  };
+  workTab.addEventListener('click', e => { e.preventDefault(); e.stopImmediatePropagation(); setMenu(!document.body.classList.contains('menu-open')); });
+  // A click outside the open menu only closes it (it doesn't also open the film underneath).
+  addEventListener('click', e => {
+    if (!document.body.classList.contains('menu-open') || e.target.closest('.menu-panel, [data-nav=work]')) return;
+    e.preventDefault(); e.stopPropagation(); setMenu(false);
+  }, true);
+  addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
   setFilter('all');
 
   /* ---------- Team ---------- */
@@ -131,10 +146,9 @@
     ['Anh Tuan', 'AI Film · Visual Production', 'assets/team/tuan.png']
   ];
   const teamEl = $('#team'), names = $('#team-names'), roles = $('#team-roles'), img = $('#team-img');
-  const lensTop = $('.lens-top'), lensBot = $('.lens-bot');
   names.innerHTML = team.map(t => `<li>${t[0]}</li>`).join('');
   roles.innerHTML = team.map(t => `<li>${t[1]}</li>`).join('');
-  const lensArt = films.filter(f => f.heroPoster).map(f => f.heroPoster);
+  team.forEach(t => { new Image().src = t[2]; }); // preload all portraits
   let ti = 0;
   const wrap = i => (i + team.length) % team.length;
   const showTeam = (i, dir = 0) => {
@@ -142,14 +156,17 @@
     // Position every name/role relative to the current one so the lists glide like a wheel.
     [names, roles].forEach(l => [...l.children].forEach((li, k) => {
       let o = k - ti; if (o > team.length / 2) o -= team.length; if (o < -team.length / 2) o += team.length;
-      li.style.setProperty('--o', o); li.style.opacity = o === 0 ? 1 : Math.abs(o) === 1 ? .2 : 0;
+      li.style.setProperty('--o', o); li.style.opacity = o === 0 ? 1 : Math.abs(o) === 1 ? .2 : 0; li.classList.toggle('cur', o === 0);
     }));
     teamEl.classList.remove('swap-up', 'swap-down');
     if (dir) teamEl.classList.add(dir > 0 ? 'swap-down' : 'swap-up');
     img.classList.add('out');
+    const want = ti;
     setTimeout(() => {
-      img.src = team[ti][2]; img.alt = team[ti][0]; img.classList.remove('out');
-      lensTop.src = lensArt[wrap(ti - 1) % lensArt.length]; lensBot.src = lensArt[(wrap(ti + 1) + 3) % lensArt.length];
+      if (want !== ti) return; // a newer step already took over
+      img.src = team[ti][2]; img.alt = team[ti][0];
+      // Reveal only once the new portrait is decoded, so the old face never shows under the new name.
+      img.decode().catch(() => {}).then(() => { if (want === ti) img.classList.remove('out'); });
       teamEl.classList.remove('swap-up', 'swap-down');
     }, dir ? 420 : 0);
   };
@@ -174,7 +191,7 @@
     const pid = view.startsWith('project/') && byId[view.slice(8)] ? view.slice(8) : null;
     const v = pid ? 'project' : ['work', 'team', 'about'].includes(view) ? view : view === 'contact' ? 'about' : 'home';
     if (pid) openProject(byId[pid]); else { closeProject(); lastView = v; }
-    document.body.dataset.view = v;
+    document.body.dataset.view = v; document.body.classList.remove('menu-open');
     document.querySelectorAll('[data-nav]').forEach(a => a.classList.toggle('on', a.dataset.nav === v || (v === 'project' && a.dataset.nav === 'work')));
     document.querySelectorAll('[data-bg], .team-bg').forEach(b => {
       if (b.closest('.view').id === v) { if (!b.src) b.src = b.dataset.src; b.play().catch(() => {}); } else b.pause();
@@ -182,7 +199,7 @@
     playReel(v === 'home');
   };
   // Clicking the active nav item again returns home, like the reference site.
-  document.querySelectorAll('[data-nav]').forEach(a => a.addEventListener('click', e => {
+  document.querySelectorAll('[data-nav]:not([data-nav=work])').forEach(a => a.addEventListener('click', e => {
     if (location.hash === '#' + a.dataset.nav) { e.preventDefault(); history.pushState(null, '', location.pathname); route(); }
   }));
   addEventListener('hashchange', route);

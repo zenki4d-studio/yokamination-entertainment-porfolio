@@ -7,20 +7,21 @@
 <link rel="icon" type="image/png" href="assets/yokamination-silver-transparent.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="v2.css?v=10">
+<link rel="stylesheet" href="v2.css?v=14">
 <script src="assets/catalog.js?v=14" defer></script>
 <script src="assets/project-stories.js?v=3" defer></script>
 <script src="assets/project-artwork.js?v=4" defer></script>
-<script src="v2.js?v=11" defer></script>
+<script src="v2.js?v=15" defer></script>
 </head>
 <body data-view="home">
 <header class="bar">
   <a class="logo" href="#" aria-label="Yokamination home"><svg viewBox="20 155 2130 439"><image href="assets/yokamination-silver-transparent.png" width="2172" height="724"/></svg></a>
-  <div class="nav-col"><a href="#work" data-nav="work">Work</a>
-    <ul class="filters" id="filters" aria-label="Filter work"></ul></div>
+  <div class="nav-col"><a href="#work" data-nav="work" aria-expanded="false" aria-controls="menu-panel">Work</a></div>
   <div class="nav-col"><a href="#team" data-nav="team">Team</a></div>
   <div class="nav-col"><a href="#about" data-nav="about"><span class="plus">+</span> About</a></div>
 </header>
+<!-- Work menu: drops down across the whole top bar; the page underneath keeps playing -->
+<div class="menu-panel" id="menu-panel"><ul class="filters" id="filters" aria-label="Filter work"></ul></div>
 
 <main>
   <!-- Home: endless full-screen reel -->
