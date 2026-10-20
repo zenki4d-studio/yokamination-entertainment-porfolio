@@ -7,21 +7,25 @@
 <link rel="icon" type="image/png" href="assets/yokamination-silver-transparent.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="v2.css?v=14">
+<link rel="stylesheet" href="v2.css?v=17">
 <script src="assets/catalog.js?v=14" defer></script>
 <script src="assets/project-stories.js?v=3" defer></script>
 <script src="assets/project-artwork.js?v=4" defer></script>
-<script src="v2.js?v=15" defer></script>
+<script src="assets/journal-artwork.js?v=1" defer></script>
+<script src="v2.js?v=18" defer></script>
 </head>
 <body data-view="home">
 <header class="bar">
   <a class="logo" href="#" aria-label="Yokamination home"><svg viewBox="20 155 2130 439"><image href="assets/yokamination-silver-transparent.png" width="2172" height="724"/></svg></a>
   <div class="nav-col"><a href="#work" data-nav="work" aria-expanded="false" aria-controls="menu-panel">Work</a></div>
   <div class="nav-col"><a href="#team" data-nav="team">Team</a></div>
-  <div class="nav-col"><a href="#about" data-nav="about"><span class="plus">+</span> About</a></div>
+  <div class="nav-col"><a href="#about" data-nav="about" aria-expanded="false" aria-controls="menu-panel"><span class="plus">+</span> About</a></div>
 </header>
 <!-- Work menu: drops down across the whole top bar; the page underneath keeps playing -->
-<div class="menu-panel" id="menu-panel"><ul class="filters" id="filters" aria-label="Filter work"></ul></div>
+<div class="menu-panel" id="menu-panel">
+  <ul class="filters" id="filters" data-menu="work" aria-label="Filter work"></ul>
+  <ul class="filters" id="about-menu" data-menu="about" aria-label="About"><li><a href="#about">Info</a></li><li><a href="#journal">Journal</a></li></ul>
+</div>
 
 <main>
   <!-- Home: endless full-screen reel -->
@@ -29,6 +33,9 @@
 
   <!-- Work grid -->
   <section class="view work" id="work" aria-label="Work"><div class="grid" id="grid"></div></section>
+
+  <!-- Journal: contest entries and work in progress, kept apart from the portfolio -->
+  <section class="view journal" id="journal" aria-label="Journal"><div class="j-grid" id="j-grid"></div></section>
 
   <!-- Team: lens carousel -->
   <section class="view team" id="team" aria-label="Team">
@@ -63,6 +70,11 @@
       <div class="lead">
         <a class="madness" href="mailto:yokamination@gmail.com">Start the story</a>
         <p class="big">Yokamination is an independent AI film &amp; visual studio — films, animation and product advertising, from idea to final frame.</p>
+      </div>
+      <p class="lab">H:</p>
+      <div class="founder">
+        <img src="assets/team/viet.png" alt="Viet Nguyen" loading="lazy">
+        <div><b>Viet Nguyen</b><span>Founder &amp; Creative Director, Yokamination</span><small>Co-founder, Zen AI</small></div>
       </div>
       <div class="info-grid">
         <div><p class="lab">E:</p><small>For all inquiries</small><a href="mailto:yokamination@gmail.com">yokamination@gmail.com</a></div>

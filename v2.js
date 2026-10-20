@@ -20,6 +20,30 @@
   const trailers = new Set(['86f05f7694b5', '8cf0fc7e40ce', 'f5aa30040bec']);
   films.forEach(f => f.title = clean(f.title) + (trailers.has(f.id) ? ' Trailer' : ''));
 
+  // Journal: contest entries / works in progress. They still play in the home reel,
+  // but live under About › Journal instead of the Work portfolio.
+  const CONTEST = 'CapCut Mango+ contest entry';
+  const journal = [
+    { id: 'lac-hong', film: '8cf0fc7e40ce', date: 'Oct, 2026', tag: CONTEST,
+      excerpt: 'A one-minute teaser for an AI animated film made by Zen AI × Yokamination — a bronze drum, a girl and the Lac bird that finds its way home.',
+      summary: 'In a domed city of the future, a young girl and her family keep a bronze drum handed down from their ancestors. When disaster strikes, the drum carries her back to the age of her forebears — a story about remembering where we come from.',
+      facts: [['Studio', 'Zen AI × Yokamination'], ['Format', 'AI animated trailer'], ['Status', CONTEST]],
+      gallery: [
+        { items: [{ image: 'lh-title' }] },
+        { sec: 'The future', items: [{ image: 'lh-city', title: 'The city' }, { image: 'lh-dome', title: 'The dome' }] },
+        { sec: 'The drum', items: [{ image: 'lh-drum-falls', title: 'The drum falls' }, { image: 'lh-fire', title: 'Fire' }, { image: 'lh-drum-held', title: 'Holding on' }, { image: 'lh-awakening', title: 'Awakening' }] },
+        { sec: 'The ancestors', items: [{ image: 'lh-van-lang', title: 'The ancient village' }, { image: 'lh-drum-strike', title: 'The drum sounds' }] },
+        { items: [{ image: 'lh-lac-bird', title: 'The Lac bird' }] }
+      ],
+      credits: [['Zen AI × Yokamination', [['Film by', 'Viet Nguyen'], ['Production', 'Zen AI × Yokamination Entertainment']]], ['Made for', [['Contest', 'CapCut Mango+']]]] },
+    { id: 'troi-mua', film: 'f5aa30040bec', date: 'Oct, 2026', tag: CONTEST, story: 'troi-mua-cho-moi-an-ga',
+      excerpt: 'Behind the scenes of an AI animated fantasy based on Vietnamese upside-down folk rhymes: locations, characters, frames and props.',
+      facts: [['Status', CONTEST]] }
+  ];
+  const postByFilm = Object.fromEntries(journal.map(p => [p.film, p]));
+  const workFilms = films.filter(f => !postByFilm[f.id]);
+  const openHref = f => postByFilm[f.id] ? '#journal/' + postByFilm[f.id].id : '#project/' + f.id;
+
   /* ---------- Endless reel ---------- */
   // Slides are positioned with GPU transforms instead of native scroll: sub-pixel smooth drift,
   // no layout jank, and an index k that runs forever in both directions (film = k mod n).
@@ -42,7 +66,7 @@
     const skip = { 'The Ai Kuroichi.mp4': 3, 'Montage AI Flow.mp4': 3 }[f.filename];
     if (skip) v.addEventListener('loadedmetadata', () => { v.currentTime = skip; }, { once: true });
     v.addEventListener('playing', () => el.classList.add('playing'));
-    el.addEventListener('click', () => { if (!dragMoved) location.hash = 'project/' + f.id; });
+    el.addEventListener('click', () => { if (!dragMoved) location.hash = openHref(f); });
     reel.appendChild(el);
     return el;
   };
@@ -97,14 +121,14 @@
   // "Watch" cursor over anything that opens a film.
   const cur = document.createElement('div'); cur.className = 'watch-cursor'; cur.textContent = 'Watch'; document.body.appendChild(cur);
   addEventListener('pointermove', e => {
-    const on = e.pointerType === 'mouse' && e.target.closest('.slide, .card');
+    const on = e.pointerType === 'mouse' && e.target.closest('.slide, .card, .j-card');
     cur.classList.toggle('on', !!on);
     cur.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
   }, { passive: true });
 
   /* ---------- Work grid ---------- */
   const grid = $('#grid');
-  films.forEach((f, i) => {
+  workFilms.forEach((f, i) => {
     const c = document.createElement('article');
     c.className = 'card'; c.dataset.group = f.group;
     c.innerHTML = `<div class="media"><img src="${f.poster}" alt="" loading="lazy"><video muted loop playsinline preload="none"></video></div>
@@ -115,33 +139,55 @@
     c.addEventListener('click', () => location.hash = 'project/' + f.id);
     grid.appendChild(c);
   });
-  const groups = [...new Set(films.map(f => f.group))];
+  const groups = [...new Set(workFilms.map(f => f.group))];
   const fl = $('#filters');
   const setFilter = g => {
     fl.querySelectorAll('button').forEach(b => b.classList.toggle('on', b.dataset.g === g));
     grid.querySelectorAll('.card').forEach(c => c.classList.toggle('hide', g !== 'all' && c.dataset.group !== g));
   };
-  fl.innerHTML = `<li><button data-g="all">All<sup>${films.length}</sup></button></li>` +
+  fl.innerHTML = `<li><button data-g="all">All<sup>${workFilms.length}</sup></button></li>` +
     groups.map(g => `<li><button data-g="${g}">${nice(g)}</button></li>`).join('');
   // Picking a category is what opens the Work grid; the Work tab itself only opens the menu.
   fl.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; setFilter(b.dataset.g); setMenu(false); location.hash = 'work'; });
-  const workTab = $('[data-nav=work]');
-  const setMenu = open => {
-    if (open) document.body.style.setProperty('--wx', workTab.getBoundingClientRect().left + 'px');
-    document.body.classList.toggle('menu-open', open); workTab.setAttribute('aria-expanded', open);
+  // Work and About each open the same frosted panel with their own list; the page beneath keeps playing.
+  const menuTabs = [...document.querySelectorAll('[data-nav=work], [data-nav=about]')];
+  const setMenu = name => {
+    const tab = menuTabs.find(t => t.dataset.nav === name);
+    if (tab) { document.body.style.setProperty('--wx', tab.getBoundingClientRect().left + 'px'); document.body.dataset.menu = name; }
+    document.body.classList.toggle('menu-open', !!tab);
+    menuTabs.forEach(t => t.setAttribute('aria-expanded', t === tab));
   };
-  workTab.addEventListener('click', e => { e.preventDefault(); e.stopImmediatePropagation(); setMenu(!document.body.classList.contains('menu-open')); });
+  menuTabs.forEach(t => t.addEventListener('click', e => {
+    e.preventDefault(); e.stopImmediatePropagation();
+    setMenu(document.body.classList.contains('menu-open') && document.body.dataset.menu === t.dataset.nav ? false : t.dataset.nav);
+  }));
+  $('#about-menu').addEventListener('click', e => { if (e.target.closest('a')) setMenu(false); });
   // A click outside the open menu only closes it (it doesn't also open the film underneath).
   addEventListener('click', e => {
-    if (!document.body.classList.contains('menu-open') || e.target.closest('.menu-panel, [data-nav=work]')) return;
+    if (!document.body.classList.contains('menu-open') || e.target.closest('.menu-panel, [data-nav=work], [data-nav=about]')) return;
     e.preventDefault(); e.stopPropagation(); setMenu(false);
   }, true);
   addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
   setFilter('all');
 
+  /* ---------- Journal ---------- */
+  const jgrid = $('#j-grid');
+  journal.forEach(p => {
+    const f = byId[p.film]; if (!f) return;
+    const c = document.createElement('article');
+    c.className = 'j-card';
+    c.innerHTML = `<div class="media"><img src="${f.heroPoster || f.poster}" alt="" loading="lazy"><video muted loop playsinline preload="none"></video></div>
+      <div class="body"><h3>${f.title}</h3><p>${p.excerpt}</p><div class="src"><span>${p.tag}</span><span>${p.date}</span></div></div>`;
+    const v = $('video', c);
+    c.addEventListener('mouseenter', () => { if (!v.src) v.src = src720(f); v.play().catch(() => {}); });
+    c.addEventListener('mouseleave', () => v.pause());
+    c.addEventListener('click', () => location.hash = 'journal/' + p.id);
+    jgrid.appendChild(c);
+  });
+
   /* ---------- Team ---------- */
+  // The founder is introduced once, under About; Team shows the people leading production.
   const team = [
-    ['Viet Nguyen', 'Founder · Creative Director', 'assets/team/viet.png'],
     ['Thien Phuoc', 'Art Director · 3D Generalist', 'assets/team/phuoc.png'],
     ['Anh Tuan', 'AI Film · Visual Production', 'assets/team/tuan.png']
   ];
@@ -189,10 +235,12 @@
   const route = () => {
     const view = (location.hash.slice(1) || 'home');
     const pid = view.startsWith('project/') && byId[view.slice(8)] ? view.slice(8) : null;
-    const v = pid ? 'project' : ['work', 'team', 'about'].includes(view) ? view : view === 'contact' ? 'about' : 'home';
-    if (pid) openProject(byId[pid]); else { closeProject(); lastView = v; }
+    const post = view.startsWith('journal/') ? journal.find(p => p.id === view.slice(8)) : null;
+    const v = pid || post ? 'project' : ['work', 'team', 'about', 'journal'].includes(view) ? view : view === 'contact' ? 'about' : 'home';
+    if (post) openProject(byId[post.film], post); else if (pid) openProject(byId[pid]); else { closeProject(); lastView = v; }
+    document.body.dataset.section = post || v === 'journal' ? 'about' : pid ? 'work' : v;
     document.body.dataset.view = v; document.body.classList.remove('menu-open');
-    document.querySelectorAll('[data-nav]').forEach(a => a.classList.toggle('on', a.dataset.nav === v || (v === 'project' && a.dataset.nav === 'work')));
+    document.querySelectorAll('[data-nav]').forEach(a => a.classList.toggle('on', a.dataset.nav === document.body.dataset.section));
     document.querySelectorAll('[data-bg], .team-bg').forEach(b => {
       if (b.closest('.view').id === v) { if (!b.src) b.src = b.dataset.src; b.play().catch(() => {}); } else b.pause();
     });
@@ -207,7 +255,7 @@
   /* ---------- Project detail ---------- */
   const proj = $('#project'), pv = $('#p-video'), pnext = $('#p-next');
   const esc = t => String(t).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
-  const art = key => window.PROJECT_ARTWORK?.[key]?.variants || [];
+  const art = key => (window.PROJECT_ARTWORK?.[key] || window.JOURNAL_ARTWORK?.[key])?.variants || [];
   // One image tile. `sec` puts a section heading on the image itself instead of a text block above it.
   const tile = (it, { full = false, sec = '', sub = '' } = {}) => {
     const v = art(it.image); if (!v.length) return '';
@@ -234,7 +282,7 @@
       behind.map((x, i) => group(x.images, shortSec(x.title), i === 0 ? story.behind.title : '')).join('');
   }
   const teamName = n => ({ 'Nguyen Hoang Viet': 'Viet Nguyen', 'Le Thien Phuoc': 'Thien Phuoc', 'Tran Anh Tuan': 'Anh Tuan' })[n] || n;
-  const credits = (f, story) => {
+  const credits = (f, story, post) => {
     const block = (title, rows) => {
       const half = Math.ceil(rows.length / 2), cols = [rows.slice(0, half), rows.slice(half)];
       // left column fills first, right column second — like a film's end roll
@@ -242,34 +290,44 @@
       return `<section class="cred"><h3>${esc(title)}</h3><dl>${cells.join('')}</dl></section>`;
     };
     const out = [];
+    if (post?.credits) return post.credits.map(([t, rows]) => block(t, rows)).join('');
     if (story) {
       out.push(block('Production house | Yokamination Entertainment', story.credits.map(([r, n]) => [r, teamName(n)])));
       out.push(block('Original music', [['Music Producer', 'Viet Nguyen']]));
       out.push(block('Made with', story.tools.split('·').map(t => t.trim()).map((t, i) => [i ? '' : 'Tools', t])));
+      if (post) out.push(block('Made for', [['Contest', 'CapCut Mango+']]));
     } else out.push(block('Production house | Yokamination Entertainment', [['Director', 'Viet Nguyen'], ['Production', 'Yokamination Entertainment']]));
     return out.join('');
   };
 
-  function openProject(f) {
-    const info = projects[f.id] || {}, story = window.PROJECT_STORIES?.[info.slug];
+  function openProject(f, post) {
+    const info = projects[f.id] || {}, story = window.PROJECT_STORIES?.[post ? post.story : info.slug];
     if (pv.dataset.id !== f.id) {
       pv.dataset.id = f.id; pv.src = src720(f); pv.poster = f.heroPoster || f.poster;
       pv.muted = true; pv.controls = false; proj.scrollTop = 0;
       $('#p-title').textContent = f.title;
       const facts = [['Category', nice(f.group)], ['Year', year(f)], ['Duration', f.duration]];
       if (story) story.facts.filter(([k]) => k !== 'Production').forEach(r => facts.push(r));
+      if (post) post.facts.forEach(r => facts.push(r));
       $('#p-facts').innerHTML = facts.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('');
-      $('#p-sum').textContent = story ? story.summary : (info.summary || '');
-      $('#p-gallery').innerHTML = story ? renderStory(story) : '';
-      $('#p-credits').innerHTML = credits(f, story);
-      const i = films.indexOf(f), prev = films[(i - 1 + films.length) % films.length], next = films[(i + 1) % films.length];
-      pnext.innerHTML = `<a href="#project/${prev.id}">← ${esc(prev.title)}</a><a href="#project/${next.id}">${esc(next.title)} →</a>`;
+      $('#p-sum').textContent = post?.summary || (story ? story.summary : (info.summary || ''));
+      $('#p-gallery').innerHTML = post?.gallery ? post.gallery.map(g => group(g.items, g.sec || '')).join('') : story ? renderStory(story) : '';
+      $('#p-credits').innerHTML = credits(f, story, post);
+      // prev/next stay within the same list: portfolio projects or journal posts
+      const list = post ? journal.map(p => byId[p.film]) : workFilms;
+      const i = list.indexOf(f), prev = list[(i - 1 + list.length) % list.length], next = list[(i + 1) % list.length];
+      pnext.innerHTML = list.length < 2 ? '' : (list.length > 2 ? `<a href="${openHref(prev)}">← ${esc(prev.title)}</a>` : '<span></span>') + `<a href="${openHref(next)}">${esc(next.title)} →</a>`;
     }
+    $('.p-back').setAttribute('href', post ? '#journal' : '#work');
     pv.play().catch(() => {});
   }
   function closeProject() { if (!pv.paused) pv.pause(); }
   $('#p-play').addEventListener('click', () => { pv.muted = false; pv.controls = true; pv.currentTime = 0; pv.play().catch(() => {}); });
-  $('.p-back').addEventListener('click', e => { e.preventDefault(); location.hash = lastView === 'home' ? '' : lastView; });
+  $('.p-back').addEventListener('click', e => {
+    e.preventDefault();
+    const fromJournal = location.hash.startsWith('#journal/');
+    location.hash = lastView === 'home' ? '' : fromJournal ? 'journal' : lastView === 'journal' ? 'work' : lastView;
+  });
   proj.addEventListener('scroll', () => { if (proj.scrollTop > innerHeight * .8) pv.pause(); else if (pv.paused && pv.muted && document.body.dataset.view === 'project') pv.play().catch(() => {}); }, { passive: true });
 
   /* ---------- Sound + clock ---------- */

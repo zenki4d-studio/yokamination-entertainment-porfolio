@@ -22,13 +22,16 @@ body[data-view=about] .plus{transform:rotate(45deg)}
 body.menu-open .menu-panel{transform:none;pointer-events:auto}
 body.menu-open .bar{background:none}
 .filters{font-size:17px;line-height:2.1;white-space:nowrap}
-.filters button{color:rgba(255,255,255,.6);text-align:left;text-transform:uppercase;letter-spacing:.03em}
-.filters button.on,.filters button:hover{color:var(--fg)}
+.filters button,.filters a{color:rgba(255,255,255,.6);text-align:left;text-transform:uppercase;letter-spacing:.03em}
+.filters button.on,.filters button:hover,.filters a:hover{color:var(--fg)}
+/* one panel, two menus: only the one that was opened is shown */
+.menu-panel [data-menu]{display:none}
+body[data-menu=work] .menu-panel [data-menu=work],body[data-menu=about] .menu-panel [data-menu=about]{display:block}
 .filters sup{font-size:9px;margin-left:2px}
 
 /* Views */
 .view{position:fixed;inset:0;visibility:hidden;opacity:0;transition:opacity .45s,visibility .45s;overflow:auto}
-body[data-view=home] #reel,body[data-view=work] #work,body[data-view=team] #team,body[data-view=about] #about,body[data-view=project] #project{visibility:visible;opacity:1}
+body[data-view=home] #reel,body[data-view=work] #work,body[data-view=team] #team,body[data-view=about] #about,body[data-view=project] #project,body[data-view=journal] #journal{visibility:visible;opacity:1}
 .lab{color:var(--fg);opacity:.75}
 
 /* Endless reel */
@@ -59,6 +62,20 @@ body[data-view=home] #reel,body[data-view=work] #work,body[data-view=team] #team
 .card .n{color:var(--dim)}
 .card .yr{color:var(--dim)}
 .card.hide{display:none}
+
+/* Journal: article cards, like a press page */
+.journal{padding-top:96px}
+.j-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,520px),1fr));align-items:start;padding-bottom:80px}
+.j-card{cursor:none}
+.j-card .media{position:relative;aspect-ratio:16/10;overflow:hidden;background:#0b0b0b}
+.j-card .media img,.j-card .media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.j-card .media video{opacity:0;transition:opacity .3s}
+.j-card:hover .media video{opacity:1}
+.j-card .body{padding:22px var(--pad) 50px;display:grid;gap:8px}
+.j-card h3{font-size:15px;line-height:1.3}
+.j-card p{color:var(--muted);line-height:1.35;font-weight:500}
+.j-card .src{display:flex;justify-content:space-between;color:var(--muted);margin-top:28px}
+.p-tag{display:inline-block;margin-bottom:14px;padding:3px 8px;border:1px solid rgba(255,255,255,.4);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
 
 /* Team: lens carousel */
 .team{overflow:hidden;background:#0a0a0a}
@@ -125,6 +142,12 @@ body[data-view=home] #reel,body[data-view=work] #work,body[data-view=team] #team
 .madness{font-size:clamp(40px,5vw,84px);line-height:1;letter-spacing:-.035em;text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:8px;justify-self:start}
 .madness:hover{color:var(--accent)}
 .big{font-size:clamp(18px,1.7vw,26px);line-height:1.3;letter-spacing:-.02em;max-width:30em}
+.about-body>.lab:nth-of-type(2){padding-top:0}
+.founder{grid-column:2;display:flex;align-items:center;gap:20px}
+.founder img{width:96px;height:96px;object-fit:cover;filter:grayscale(1) contrast(1.05)}
+.founder div{display:grid;gap:4px}
+.founder b{font-size:20px;letter-spacing:-.02em}
+.founder small{font-size:13px}
 .info-grid{grid-column:1/3;display:grid;grid-template-columns:repeat(4,1fr);gap:var(--pad)}
 .info-grid>div{display:grid;gap:6px;align-content:start}
 .socials{display:grid;grid-template-columns:auto auto;gap:4px 24px;justify-content:start}
@@ -160,6 +183,8 @@ dialog video{width:100%;height:100%;object-fit:contain}
   .card .info{grid-template-columns:44px 1fr;padding-bottom:40px}
   .card .info>span:nth-child(3){grid-column:2;color:var(--dim)}
   .filters{font-size:15px}
+  .j-grid{grid-template-columns:1fr}
+  .j-card .media,  .journal{padding-top:70px}
   .p-info{grid-template-columns:1fr}
   .p-info>*{grid-column:1!important}
   .p-title{right:var(--pad);bottom:96px}
@@ -168,7 +193,9 @@ dialog video{width:100%;height:100%;object-fit:contain}
   .cred dl{grid-template-columns:1fr 1fr}
   .team-head{top:12%}
   .about-body{grid-template-columns:1fr}
-  .lead,.info-grid,.about-body>.lab{grid-column:1}
+  .lead,.info-grid,.founder,.about-body>.lab{grid-column:1}
+  .founder img{width:72px;height:72px}
+  .about-body{row-gap:32px}
   .info-grid{grid-template-columns:1fr 1fr}
   .meta .t{max-width:90%}
 }
